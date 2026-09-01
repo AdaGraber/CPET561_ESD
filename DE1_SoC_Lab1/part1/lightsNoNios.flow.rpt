@@ -1,6 +1,6 @@
 Flow report for lightsNoNios
-Mon Aug 24 10:28:07 2026
-Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Tue Sep 01 14:11:37 2026
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
 ---------------------
@@ -37,29 +37,29 @@ refer to the applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------+
-; Flow Summary                                                                  ;
-+---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Mon Aug 24 10:28:00 2026       ;
-; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Revision Name                   ; lightsNoNios                                ;
-; Top-level Entity Name           ; lightsNoNios                                ;
-; Family                          ; Cyclone V                                   ;
-; Device                          ; 5CSEMA5F31C6                                ;
-; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 14 / 32,070 ( < 1 % )                       ;
-; Total registers                 ; 29                                          ;
-; Total pins                      ; 15 / 457 ( 3 % )                            ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
-; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0 / 6 ( 0 % )                               ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
-+---------------------------------+---------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Flow Summary                                                                      ;
++---------------------------------+-------------------------------------------------+
+; Flow Status                     ; Successful - Tue Sep 01 14:11:32 2026           ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
+; Revision Name                   ; lightsNoNios                                    ;
+; Top-level Entity Name           ; lightsNoNios                                    ;
+; Family                          ; Cyclone V                                       ;
+; Device                          ; 5CSEMA5F31C6                                    ;
+; Timing Models                   ; Final                                           ;
+; Logic utilization (in ALMs)     ; 14 / 32,070 ( < 1 % )                           ;
+; Total registers                 ; 29                                              ;
+; Total pins                      ; 15 / 457 ( 3 % )                                ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                           ;
+; Total DSP Blocks                ; 0 / 87 ( 0 % )                                  ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 0 / 6 ( 0 % )                                   ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                                   ;
++---------------------------------+-------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/24/2026 10:26:54 ;
+; Start date & time ; 09/01/2026 14:10:45 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lightsNoNios        ;
 +-------------------+---------------------+
@@ -78,10 +78,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 277302806753297.178758161417124        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 194042950431224.178828624524320        ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --         ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 
 
@@ -90,11 +94,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 4890 MB             ; 00:00:29                           ;
-; Fitter               ; 00:00:41     ; 1.0                     ; 7857 MB             ; 00:02:24                           ;
-; Assembler            ; 00:00:08     ; 1.0                     ; 4824 MB             ; 00:00:08                           ;
-; Timing Analyzer      ; 00:00:06     ; 1.1                     ; 5254 MB             ; 00:00:06                           ;
-; Total                ; 00:01:09     ; --                      ; --                  ; 00:03:07                           ;
+; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 4928 MB             ; 00:00:18                           ;
+; Fitter               ; 00:00:31     ; 1.0                     ; 7173 MB             ; 00:01:50                           ;
+; Assembler            ; 00:00:06     ; 1.0                     ; 4860 MB             ; 00:00:05                           ;
+; Timing Analyzer      ; 00:00:04     ; 1.1                     ; 5238 MB             ; 00:00:04                           ;
+; Total                ; 00:00:50     ; --                      ; --                  ; 00:02:17                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -103,10 +107,10 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; LAPTOP-HVNT1HVJ  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; LAPTOP-HVNT1HVJ  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; LAPTOP-HVNT1HVJ  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; LAPTOP-HVNT1HVJ  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; gol-1360-01      ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; gol-1360-01      ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; gol-1360-01      ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; gol-1360-01      ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

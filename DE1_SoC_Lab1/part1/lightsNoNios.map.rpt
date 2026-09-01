@@ -1,6 +1,6 @@
 Analysis & Synthesis report for lightsNoNios
-Mon Aug 24 10:27:07 2026
-Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Tue Sep 01 14:10:53 2026
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
 ---------------------
@@ -39,27 +39,27 @@ refer to the applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Aug 24 10:27:07 2026       ;
-; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Revision Name                   ; lightsNoNios                                ;
-; Top-level Entity Name           ; lightsNoNios                                ;
-; Family                          ; Cyclone V                                   ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 29                                          ;
-; Total pins                      ; 15                                          ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 0                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++---------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Sep 01 14:10:53 2026           ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
+; Revision Name                   ; lightsNoNios                                    ;
+; Top-level Entity Name           ; lightsNoNios                                    ;
+; Family                          ; Cyclone V                                       ;
+; Logic utilization (in ALMs)     ; N/A                                             ;
+; Total registers                 ; 29                                              ;
+; Total pins                      ; 15                                              ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 0                                               ;
+; Total DSP Blocks                ; 0                                               ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 0                                               ;
+; Total DLLs                      ; 0                                               ;
++---------------------------------+-------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -154,25 +154,25 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 16          ;
-; Maximum allowed            ; 16          ;
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 10          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 16          ;
+; Maximum used               ; 10          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-16        ;   0.0%      ;
+;     Processors 2-10        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                   ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                            ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
-; lightsNoNios.vhd                 ; yes             ; User VHDL File  ; C:/repo/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                    ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                             ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+---------+
+; lightsNoNios.vhd                 ; yes             ; User VHDL File  ; C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -261,25 +261,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Aug 24 10:26:53 2026
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+    Info: Processing started: Tue Sep 01 14:10:44 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lightsNoNios -c lightsNoNios
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file lightsnonios.vhd
-    Info (12022): Found design unit 1: lightsNoNios-lights_arch File: C:/repo/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 21
-    Info (12023): Found entity 1: lightsNoNios File: C:/repo/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 13
+    Info (12022): Found design unit 1: lightsNoNios-lights_arch File: C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 21
+    Info (12023): Found entity 1: lightsNoNios File: C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 13
 Info (12127): Elaborating entity "lightsNoNios" for the top level hierarchy
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[1]" is stuck at VCC File: C:/repo/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 17
-    Warning (13410): Pin "LEDR[2]" is stuck at VCC File: C:/repo/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 17
-    Warning (13410): Pin "LEDR[3]" is stuck at VCC File: C:/repo/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 17
-    Warning (13410): Pin "LEDR[4]" is stuck at VCC File: C:/repo/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 17
-    Warning (13410): Pin "LEDR[5]" is stuck at VCC File: C:/repo/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 17
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/repo/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 17
-    Warning (13410): Pin "LEDR[7]" is stuck at VCC File: C:/repo/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 17
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/repo/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 17
-    Warning (13410): Pin "LEDR[9]" is stuck at VCC File: C:/repo/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 17
+    Warning (13410): Pin "LEDR[1]" is stuck at VCC File: C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 17
+    Warning (13410): Pin "LEDR[2]" is stuck at VCC File: C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 17
+    Warning (13410): Pin "LEDR[3]" is stuck at VCC File: C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 17
+    Warning (13410): Pin "LEDR[4]" is stuck at VCC File: C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 17
+    Warning (13410): Pin "LEDR[5]" is stuck at VCC File: C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 17
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 17
+    Warning (13410): Pin "LEDR[7]" is stuck at VCC File: C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 17
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 17
+    Warning (13410): Pin "LEDR[9]" is stuck at VCC File: C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 17
 Info (286030): Timing-Driven Synthesis is running
 Warning (20013): Ignored 571 assignments for entity "DE1_SoC" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[0] -entity DE1_SoC was ignored
@@ -856,17 +856,17 @@ Warning (20013): Ignored 571 assignments for entity "DE1_SoC" -- entity does not
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/repo/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 16
-    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/repo/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 16
-    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/repo/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 16
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 16
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 16
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab1/part1/lightsNoNios.vhd Line: 16
 Info (21057): Implemented 44 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 10 output pins
     Info (21061): Implemented 29 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 587 warnings
-    Info: Peak virtual memory: 4890 megabytes
-    Info: Processing ended: Mon Aug 24 10:27:07 2026
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:30
+    Info: Peak virtual memory: 4928 megabytes
+    Info: Processing ended: Tue Sep 01 14:10:53 2026
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:19
 
 
