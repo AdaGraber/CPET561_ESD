@@ -13,3 +13,6 @@ Info:            11 KBytes free for stack + heap.
 Info: Creating test.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source test.elf >test.objdump
 [test build complete]
+
+14:33:59 Build Finished (took 1s.247ms)
+
