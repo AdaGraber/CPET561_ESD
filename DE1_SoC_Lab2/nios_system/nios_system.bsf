@@ -33,8 +33,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 152)
 		(input)
-		(text "pushbuttons_export[3..0]" (rect 0 0 97 12)(font "Arial" (font_size 8)))
-		(text "pushbuttons_export[3..0]" (rect 4 141 148 152)(font "Arial" (font_size 8)))
+		(text "pushbuttons_export[2..0]" (rect 0 0 97 12)(font "Arial" (font_size 8)))
+		(text "pushbuttons_export[2..0]" (rect 4 141 148 152)(font "Arial" (font_size 8)))
 		(line (pt 0 152)(pt 144 152)(line_width 3))
 	)
 	(port
