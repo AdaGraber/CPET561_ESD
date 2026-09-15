@@ -35,25 +35,10 @@ main:
  movia r4, 0(SWITCH)
 
 swdetect:
- bgt r4, r0, increment
- bet r4, r0, decrement
+ bgt r4, 0, increment
+ jmp decrement
 
 increment:
- bet r3, r0, decrement
- bgt r3, r0, increment
- call INCREASE
+ bgt r3, r0,
+
 decrement:
- bgt r3, r0, increment
- bet r3, r0, decrement
- call DECREASE
-
-
- # subroutine for incrementing hex
-INCREASE:
- bgt r3, r0, INCREASE
-
-
- # subroutine for decrementing hex
-DECREASE:
- bgt r3, r0, DECREASE
-

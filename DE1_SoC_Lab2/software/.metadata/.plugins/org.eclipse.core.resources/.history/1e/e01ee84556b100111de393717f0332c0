@@ -52,7 +52,6 @@ decrement:
 INCREASE:
  bgt r3, r0, INCREASE
 
-
  # subroutine for decrementing hex
 DECREASE:
  bgt r3, r0, DECREASE

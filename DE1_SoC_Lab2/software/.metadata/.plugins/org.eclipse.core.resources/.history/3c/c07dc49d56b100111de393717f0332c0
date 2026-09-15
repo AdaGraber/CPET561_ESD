@@ -51,7 +51,7 @@ decrement:
  # subroutine for incrementing hex
 INCREASE:
  bgt r3, r0, INCREASE
-
+ and
 
  # subroutine for decrementing hex
 DECREASE:

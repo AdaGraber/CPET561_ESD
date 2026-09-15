@@ -32,28 +32,18 @@ main:
 # assign registers their respective addresses for future use.
  movia r2, HEX0
  movia r3, 0(PUSHBUTTON)
- movia r4, 0(SWITCH)
-
-swdetect:
- bgt r4, r0, increment
- bet r4, r0, decrement
-
-increment:
- bet r3, r0, decrement
- bgt r3, r0, increment
- call INCREASE
-decrement:
- bgt r3, r0, increment
- bet r3, r0, decrement
- call DECREASE
+ movia r4, ZEROHEX
+ movia r5, ONEHEX
+ movia r6, TWOHEX
+ movia r7, THREEHEX
+ movia r8, FOURHEX
+ movia r9, FIVEHEX
+ movia r10, SIXHEX
+ movia r11, SEVENHEX
+ movia r12, EIGHTHEX
+ movia r13, NINEHEX
+ stbio r4, 0(r2)
 
 
- # subroutine for incrementing hex
-INCREASE:
- bgt r3, r0, INCREASE
-
-
- # subroutine for decrementing hex
-DECREASE:
- bgt r3, r0, DECREASE
-
+loop:
+    br loop
