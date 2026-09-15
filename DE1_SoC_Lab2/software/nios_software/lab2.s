@@ -1,10 +1,8 @@
 .text
-.global _start
+.global main
 
-_start:
-    movia r2, 0xFF200020      # Base address for HEX3..HEX0
-    movui r3, 0x3F            # 7-seg pattern for digit 0
-    stw r3, 0(r2)             # Write to HEX0
+main:
+
 
 end:
     br end

@@ -227,6 +227,7 @@ LOAD c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nio
  .text          0x0000000000008230       0x3c ../nios_software_bsp//obj/HAL/src/crt0.o
                 0x0000000000008230                _start
  .text          0x000000000000826c       0x14 obj/default/lab2.o
+                0x000000000000826c                main
  .text          0x0000000000008280       0xec ../nios_software_bsp/\libhal_bsp.a(alt_load.o)
                 0x00000000000082e8                alt_load
  .text          0x000000000000836c       0x7c ../nios_software_bsp/\libhal_bsp.a(alt_main.o)
