@@ -1,5 +1,5 @@
 Flow report for lightsWithNios
-Tue Sep 01 15:17:17 2026
+Tue Sep 15 15:20:56 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -40,19 +40,19 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Flow Status                     ; Successful - Tue Sep 01 15:17:06 2026           ;
+; Flow Status                     ; Successful - Tue Sep 15 15:20:49 2026           ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                   ; lightsWithNios                                  ;
-; Top-level Entity Name           ; lights                                          ;
+; Top-level Entity Name           ; lightsWithNios                                  ;
 ; Family                          ; Cyclone V                                       ;
 ; Device                          ; 5CSEMA5F31C6                                    ;
 ; Timing Models                   ; Final                                           ;
-; Logic utilization (in ALMs)     ; 1,271 / 32,070 ( 4 % )                          ;
-; Total registers                 ; 1958                                            ;
+; Logic utilization (in ALMs)     ; 731 / 32,070 ( 2 % )                            ;
+; Total registers                 ; 1016                                            ;
 ; Total pins                      ; 25 / 457 ( 5 % )                                ;
 ; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 325,504 / 4,065,280 ( 8 % )                     ;
-; Total DSP Blocks                ; 3 / 87 ( 3 % )                                  ;
+; Total block memory bits         ; 273,408 / 4,065,280 ( 7 % )                     ;
+; Total DSP Blocks                ; 0 / 87 ( 0 % )                                  ;
 ; Total HSSI RX PCSs              ; 0                                               ;
 ; Total HSSI PMA RX Deserializers ; 0                                               ;
 ; Total HSSI TX PCSs              ; 0                                               ;
@@ -67,35 +67,34 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/01/2026 15:13:47 ;
+; Start date & time ; 09/15/2026 15:18:13 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lightsWithNios      ;
 +-------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                ;
-+-------------------------------------+---------------------------------------------------------------+----------------+-------------+------------+
-; Assignment Name                     ; Value                                                         ; Default Value  ; Entity Name ; Section Id ;
-+-------------------------------------+---------------------------------------------------------------+----------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 194042950431224.178829002732384                               ; --             ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                                            ; --             ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                                             ; --             ; --          ; --         ;
-; MISC_FILE                           ; nios_system/synthesis/../nios_system.cmp                      ; --             ; --          ; --         ;
-; MISC_FILE                           ; nios_system/synthesis/../../nios_system.qsys                  ; --             ; --          ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family)                        ; --             ; lights      ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                        ; --             ; lights      ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                        ; --             ; lights      ; Top        ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                           ; --             ; --          ; --         ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                         ; --             ; --          ; --         ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                  ; --             ; --          ; --         ;
-; SLD_FILE                            ; nios_system/synthesis/nios_system.regmap                      ; --             ; --          ; --         ;
-; SLD_FILE                            ; nios_system/synthesis/nios_system.debuginfo                   ; --             ; --          ; --         ;
-; SLD_INFO                            ; QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1788288948 ; --             ; nios_system ; --         ;
-; SOPCINFO_FILE                       ; nios_system/synthesis/../../nios_system.sopcinfo              ; --             ; --          ; --         ;
-; SYNTHESIS_ONLY_QIP                  ; On                                                            ; --             ; --          ; --         ;
-; TOP_LEVEL_ENTITY                    ; lights                                                        ; lightsWithNios ; --          ; --         ;
-+-------------------------------------+---------------------------------------------------------------+----------------+-------------+------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                               ;
++-------------------------------------+---------------------------------------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                                                         ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+---------------------------------------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 194042950430156.178949989213460                               ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                            ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                             ; --            ; --          ; --         ;
+; MISC_FILE                           ; nios_system/synthesis/../nios_system.cmp                      ; --            ; --          ; --         ;
+; MISC_FILE                           ; nios_system/synthesis/../../nios_system.qsys                  ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family)                        ; --            ; --          ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                        ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                        ; --            ; --          ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                           ; --            ; --          ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                         ; --            ; --          ; --         ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                  ; --            ; --          ; --         ;
+; SLD_FILE                            ; nios_system/synthesis/nios_system.regmap                      ; --            ; --          ; --         ;
+; SLD_FILE                            ; nios_system/synthesis/nios_system.debuginfo                   ; --            ; --          ; --         ;
+; SLD_INFO                            ; QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1789498919 ; --            ; nios_system ; --         ;
+; SOPCINFO_FILE                       ; nios_system/synthesis/../../nios_system.sopcinfo              ; --            ; --          ; --         ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                            ; --            ; --          ; --         ;
++-------------------------------------+---------------------------------------------------------------+---------------+-------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -103,11 +102,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:44     ; 1.0                     ; 5089 MB             ; 00:00:53                           ;
-; Fitter               ; 00:02:22     ; 1.1                     ; 7322 MB             ; 00:12:54                           ;
-; Assembler            ; 00:00:07     ; 1.0                     ; 4911 MB             ; 00:00:07                           ;
-; Timing Analyzer      ; 00:00:10     ; 1.8                     ; 5320 MB             ; 00:00:16                           ;
-; Total                ; 00:03:23     ; --                      ; --                  ; 00:14:10                           ;
+; Analysis & Synthesis ; 00:00:24     ; 1.0                     ; 5006 MB             ; 00:00:42                           ;
+; Fitter               ; 00:02:02     ; 1.0                     ; 7329 MB             ; 00:09:17                           ;
+; Assembler            ; 00:00:06     ; 1.0                     ; 4864 MB             ; 00:00:06                           ;
+; Timing Analyzer      ; 00:00:06     ; 1.9                     ; 5286 MB             ; 00:00:10                           ;
+; Total                ; 00:02:38     ; --                      ; --                  ; 00:10:15                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -116,10 +115,10 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; gol-1360-01      ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; gol-1360-01      ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; gol-1360-01      ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; gol-1360-01      ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; gol-1360-03      ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; gol-1360-03      ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; gol-1360-03      ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; gol-1360-03      ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

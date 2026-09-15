@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Tue Sep 01 15:14:34 2026
+Analysis & Synthesis Status : Successful - Tue Sep 15 15:18:38 2026
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 Revision Name : lightsWithNios
-Top-level Entity Name : lights
+Top-level Entity Name : lightsWithNios
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 1962
+Total registers : 967
 Total pins : 25
 Total virtual pins : 0
-Total block memory bits : 325,504
-Total DSP Blocks : 3
+Total block memory bits : 273,408
+Total DSP Blocks : 0
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
 Total HSSI TX PCSs : 0
