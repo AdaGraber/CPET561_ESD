@@ -13,47 +13,62 @@
 .equ PUSHBUTTON, 0x11020
 .equ SWITCH, 0x11000
 
-# def hex values
-.equ ZEROHEX, 0b1000000
-.equ ONEHEX, 0b1111001
-.equ TWOHEX, 0b0100100
-.equ THREEHEX, 0b0110000
-.equ FOURHEX, 0b0011001
-.equ FIVEHEX, 0b0010010
-.equ SIXHEX, 0b0000010
-.equ SEVENHEX, 0b1111000
-.equ EIGHTHEX, 0b0000000
-.equ NINEHEX, 0b0010000
+HEXVALS:
+ .word 0b1000000, 0b1111001, 0b0100100, 0b0110000, 0b0011001, 0b0010010, 0b0000010, 0b1111000, 0b0000000, 0b0011001
 
 .global main
 
 main:
 
-# assign registers their respective addresses for future use.
+# assign registers their respective addresses for future use. First three should be self explanatory
  movia r2, HEX0
  movia r3, 0(PUSHBUTTON)
  movia r4, 0(SWITCH)
-
+ movi r5, r0 # our positional checker. We will be using this to check what value we are at in the hexval array starting at 0, capping at 9.
+ movia r7, HEXVALS # our actual array of hex values that will be loaded into r2. Should start at first value
+ 
+ # self explanatory, only used for first time startup of program to see current switch location.
 swdetect:
  bgt r4, r0, increment
  bet r4, r0, decrement
 
+# check if the switch changed, otherwise if the pushbutton (r3) register is not pressed we will remain here until it is
+# then we will call the increase subroutine (probably dont need to make it a whole subroutine, but i like it the name its nice and reminds me of marathon the game)
 increment:
- bet r3, r0, decrement
+ bet r4, r0, decrement
  bgt r3, r0, increment
  call INCREASE
+
+# same logic as above, but vice versa since its the decrementing switch setting
 decrement:
- bgt r3, r0, increment
+ bgt r4, r0, increment
  bet r3, r0, decrement
  call DECREASE
 
 
  # subroutine for incrementing hex
 INCREASE:
- bgt r3, r0, INCREASE
+# start with the guardian cases
+ bgt r3, r0, INCREASE # checks if button still held
+ bet r5, 9, increment # check to see if r5 is equal to 9, if so we do not increase and just go back to increment.
 
+# go into actual code for increasing value
+ addi r5, r5, 1 # increase the counter value by 1 so we can keep track of where we are in array.
+ addi r7, r7, 4 # go to next entry of array for next value
+ ldw r2, 0(r7) # load hex val into the hex address register
+ br HEX_CHANGED # should be good, end of subroutine.
 
  # subroutine for decrementing hex
 DECREASE:
- bgt r3, r0, DECREASE
+# start with guardian cases
+ bgt r3, r0, DECREASE # checks if button still held
+ bet r5, r0, decrement # if r5 is equal to zero, end process and go back to decrement.
 
+# go into actual code for decreasing value
+ subi r5, r5, 1 # decrease the counter value by 1 so we can keep track of where we are in array.
+ subi r7, r7, 4 # go to previous entry of array for next value
+ ldw r2, 0(r7) # load hex val into the hex address register
+ br HEX_CHANGED
+
+HEX_CHANGED:
+ ret
