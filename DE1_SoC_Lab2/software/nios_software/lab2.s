@@ -27,7 +27,7 @@ main:
  movi r5, r0 # our positional checker. We will be using this to check what value we are at in the hexval array starting at 0, capping at 9.
  movia r7, HEXVALS # our actual array of hex values that will be loaded into r2. Should start at first value
  
- # self explanatory, only used for first time startup of program to see current switch location.
+ # self explanatory
 swdetect:
  bgt r4, r0, increment
  bet r4, r0, decrement
@@ -37,16 +37,15 @@ swdetect:
 increment:
  bet r4, r0, decrement
  bgt r3, r0, increment
- call INCREASE
+ br INCREASE
 
 # same logic as above, but vice versa since its the decrementing switch setting
 decrement:
  bgt r4, r0, increment
  bet r3, r0, decrement
- call DECREASE
+ br DECREASE
 
-
- # subroutine for incrementing hex
+# actual code for increasing hex
 INCREASE:
 # start with the guardian cases
  bgt r3, r0, INCREASE # checks if button still held
@@ -58,7 +57,7 @@ INCREASE:
  ldw r2, 0(r7) # load hex val into the hex address register
  br HEX_CHANGED # should be good, end of subroutine.
 
- # subroutine for decrementing hex
+ # actual code for decrementing hex
 DECREASE:
 # start with guardian cases
  bgt r3, r0, DECREASE # checks if button still held
@@ -71,4 +70,4 @@ DECREASE:
  br HEX_CHANGED
 
 HEX_CHANGED:
- ret
+ br swdetect # go back to the start of the program to check for new switch values
