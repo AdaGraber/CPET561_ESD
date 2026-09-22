@@ -23,7 +23,7 @@ void decreaseHex(void);
 
 //variables and arrays
 uint32* timerPtr    = (uint32*)TIMER_0_BASE;
-uint16* keyPtr = (uint16*)PUSHBUTTON_BASE;
+uint8* keyPtr = (uint8*)PUSHBUTTON_BASE;
 uint8* ledPtr = (uint8*)LEDS_BASE;
 uint8* hexPtr = (uint8*)HEX0_BASE;
 uint8* swPtr = (uint8*)SWITCHES_BASE;

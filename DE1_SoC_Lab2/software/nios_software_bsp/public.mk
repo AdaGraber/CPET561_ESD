@@ -147,9 +147,9 @@ SOPC_NAME := nios_system
 ELF_PATCH_FLAG  += --simulation_enabled false
 
 # The SOPC System ID 
-# setting SOPC_SYSID is 103
-SOPC_SYSID_FLAG += --id=103
-ELF_PATCH_FLAG  += --id 103
+# setting SOPC_SYSID is 1
+SOPC_SYSID_FLAG += --id=1
+ELF_PATCH_FLAG  += --id 1
 
 # The SOPC System ID Base Address 
 # setting SOPC_SYSID_BASE_ADDRESS is 0x11030
@@ -157,9 +157,9 @@ SOPC_SYSID_FLAG += --sidp=0x11030
 ELF_PATCH_FLAG  += --sidp 0x11030
 
 # The SOPC Timestamp 
-# setting SOPC_TIMESTAMP is 1789501483
-SOPC_SYSID_FLAG += --timestamp=1789501483
-ELF_PATCH_FLAG  += --timestamp 1789501483
+# setting SOPC_TIMESTAMP is 1790099983
+SOPC_SYSID_FLAG += --timestamp=1790099983
+ELF_PATCH_FLAG  += --timestamp 1790099983
 
 # Enable JTAG UART driver to recover when host is inactive causing buffer to 
 # full without returning error. Printf will not fail with this recovery. none 

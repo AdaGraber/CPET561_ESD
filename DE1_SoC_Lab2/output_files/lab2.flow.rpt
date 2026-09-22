@@ -1,6 +1,6 @@
 Flow report for lab2
-Tue Sep 15 17:38:04 2026
-Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Tue Sep 22 14:03:15 2026
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
 ---------------------
@@ -37,29 +37,29 @@ refer to the applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------+
-; Flow Summary                                                                  ;
-+---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue Sep 15 17:37:57 2026       ;
-; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Revision Name                   ; lab2                                        ;
-; Top-level Entity Name           ; lab2                                        ;
-; Family                          ; Cyclone V                                   ;
-; Device                          ; 5CSEMA5F31C6                                ;
-; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 732 / 32,070 ( 2 % )                        ;
-; Total registers                 ; 1002                                        ;
-; Total pins                      ; 20 / 457 ( 4 % )                            ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 273,408 / 4,065,280 ( 7 % )                 ;
-; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0 / 6 ( 0 % )                               ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
-+---------------------------------+---------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Flow Summary                                                                      ;
++---------------------------------+-------------------------------------------------+
+; Flow Status                     ; Successful - Tue Sep 22 14:03:08 2026           ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
+; Revision Name                   ; lab2                                            ;
+; Top-level Entity Name           ; lab2                                            ;
+; Family                          ; Cyclone V                                       ;
+; Device                          ; 5CSEMA5F31C6                                    ;
+; Timing Models                   ; Final                                           ;
+; Logic utilization (in ALMs)     ; 732 / 32,070 ( 2 % )                            ;
+; Total registers                 ; 1017                                            ;
+; Total pins                      ; 20 / 457 ( 4 % )                                ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 273,408 / 4,065,280 ( 7 % )                     ;
+; Total DSP Blocks                ; 0 / 87 ( 0 % )                                  ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 0 / 6 ( 0 % )                                   ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                                   ;
++---------------------------------+-------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/15/2026 17:36:14 ;
+; Start date & time ; 09/22/2026 14:00:27 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lab2                ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+---------------------------------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                                         ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 53146181501181.178950817406656                                ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 194042950431224.179010002711292                               ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                            ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                             ; --            ; --          ; --         ;
 ; MISC_FILE                           ; nios_system/synthesis/../nios_system.cmp                      ; --            ; --          ; --         ;
@@ -91,7 +91,7 @@ refer to the applicable agreement for further details.
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                  ; --            ; --          ; --         ;
 ; SLD_FILE                            ; nios_system/synthesis/nios_system.regmap                      ; --            ; --          ; --         ;
 ; SLD_FILE                            ; nios_system/synthesis/nios_system.debuginfo                   ; --            ; --          ; --         ;
-; SLD_INFO                            ; QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1789501483 ; --            ; nios_system ; --         ;
+; SLD_INFO                            ; QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1790099983 ; --            ; nios_system ; --         ;
 ; SOPCINFO_FILE                       ; nios_system/synthesis/../../nios_system.sopcinfo              ; --            ; --          ; --         ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                            ; --            ; --          ; --         ;
 +-------------------------------------+---------------------------------------------------------------+---------------+-------------+------------+
@@ -102,11 +102,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:20     ; 1.0                     ; 4994 MB             ; 00:00:29                           ;
-; Fitter               ; 00:01:13     ; 1.1                     ; 7028 MB             ; 00:03:34                           ;
-; Assembler            ; 00:00:06     ; 1.0                     ; 4868 MB             ; 00:00:05                           ;
-; Timing Analyzer      ; 00:00:06     ; 2.2                     ; 5249 MB             ; 00:00:07                           ;
-; Total                ; 00:01:45     ; --                      ; --                  ; 00:04:15                           ;
+; Analysis & Synthesis ; 00:00:24     ; 1.0                     ; 5017 MB             ; 00:00:44                           ;
+; Fitter               ; 00:02:06     ; 1.0                     ; 7328 MB             ; 00:09:11                           ;
+; Assembler            ; 00:00:06     ; 1.0                     ; 4878 MB             ; 00:00:06                           ;
+; Timing Analyzer      ; 00:00:06     ; 1.8                     ; 5285 MB             ; 00:00:10                           ;
+; Total                ; 00:02:42     ; --                      ; --                  ; 00:10:11                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -115,10 +115,10 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-BU5KUEM  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-BU5KUEM  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-BU5KUEM  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-BU5KUEM  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; gol-1360-01      ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; gol-1360-01      ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; gol-1360-01      ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; gol-1360-01      ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

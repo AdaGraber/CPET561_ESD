@@ -1,0 +1,111 @@
+.text
+
+# define a macro to move a 32 bit address to a register
+
+.macro MOVIA reg, addr
+  movhi \reg, %hi(\addr)
+  ori \reg, \reg, %lo(\addr)
+.endm
+
+
+# def hex 0 and push buttons
+.equ HEX0, 0x11010
+.equ PUSHBUTTON, 0x11020
+.equ SWITCH, 0x11000
+
+HEXVALS:
+ .word 0b1000000, 0b1111001, 0b0100100, 0b0110000, 0b0011001, 0b0010010, 0b0000010, 0b1111000, 0b0000000, 0b0011001
+
+.global main
+
+main:
+
+# assign registers their respective addresses for future use. First three should be self explanatory
+ movia r2, HEX0
+ stwio 0, 0(r2)
+ movia r3, PUSHBUTTON
+ movia r4, SWITCH
+ movia r5, 0 # our positional checker. We will be using this to check what value we are at in the hexval array starting at 0, capping at 9.
+ movia r7, HEXVALS # our actual array of hex values that will be loaded into r2. Should start at first value
+ movia r8, 3
+ movia r9, 9
+ 
+ # self explanatory
+swdetect:
+ ldwio r11, 0(r4)
+ andi r11, r11, 0x01
+ bgt r11, r0, increment
+ beq r11, r0, decrement
+
+# check if the switch changed, otherwise if the pushbutton (r3) register is not pressed we will remain here until it is
+# then we will call the increase subroutine (probably dont need to make it a whole subroutine, but i like it the name its nice and reminds me of marathon the game)
+increment:
+ ldwio r11, 0(r4)
+ andi r11, r11, 0x01
+ beq r11, r0, decrement
+
+ # check to see if button pressed
+ ldwio r10, 0(r3)
+ andi r10, r10, 0x01
+ bgt r10, r0, increment
+ call DELAY
+ br INCREASE
+
+# same logic as above, but vice versa since its the decrementing switch setting
+decrement:
+ ldwio r11, 0(r4)
+ andi r11, r11, 0x01
+ bgt r11, r0, increment
+
+ # check to see if button pressed
+ ldwio r10, 0(r3)
+ andi r10, r10, 0x01
+ bgt r10, r0, decrement
+ call DELAY
+ br DECREASE
+
+# actual code for increasing hex
+INCREASE:
+# start with the guardian cases
+# check to see if button pressed
+ ldwio r10, 0(r3)
+ andi r10, r10, 0x01
+ beq r10, r0, INCREASE
+ call DELAY
+ beq r5, r9, increment # check to see if r5 is equal to 9, if so we do not increase and just go back to increment.
+
+# go into actual code for increasing value
+ addi r5, r5, 1 # increase the counter value by 1 so we can keep track of where we are in array.
+ addi r7, r7, 4 # go to next entry of array for next value
+ ldwio r17, 0(r7) # load hex val into the hex address register
+ stwio r17, 0(r2)
+ br HEX_CHANGED # should be good, end of subroutine.
+
+ # actual code for decrementing hex
+DECREASE:
+# start with guardian cases
+
+ # button held check
+ ldwio r10, 0(r3)
+ andi r10, r10, 0x01
+ beq r10, r0, INCREASE
+ call DELAY
+
+ beq r5, r0, decrement # if r5 is equal to zero, end process and go back to decrement.
+
+# go into actual code for decreasing value
+ subi r5, r5, 1 # decrease the counter value by 1 so we can keep track of where we are in array.
+ subi r7, r7, 4 # go to previous entry of array for next value
+ ldw r17, 0(r7) # load hex val into the hex address register
+ stwio r17, 0(r2)
+
+ br HEX_CHANGED
+
+HEX_CHANGED:
+ br swdetect # go back to the start of the program to check for new switch values
+
+DELAY:
+ subi r8, r8, 1
+ bgt r8, r0, DELAY
+ movia r8, 3
+ ret

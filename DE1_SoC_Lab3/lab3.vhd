@@ -16,6 +16,7 @@ architecture lab3_arch of lab3 is
   signal led0    : std_logic;
   signal cntr    : std_logic_vector(25 downto 0);
   signal reset_n : std_logic;
+  signal ledNios : std_logic_vector(5 downto 0);
   signal key_d1  : std_logic_vector(3 downto 0);
   signal key_d2  : std_logic_vector(3 downto 0);
   signal key_d3  : std_logic_vector(3 downto 0);
@@ -34,6 +35,9 @@ architecture lab3_arch of lab3 is
 	end component nios_system;
 
 begin
+
+  LEDS(7 downto 0) <= "1" & ledNios & led0;
+  led0             <= cntr(24);
 
   synchReset_proc : process (CLOCK_50) begin
     if (rising_edge(CLOCK_50)) then
@@ -64,7 +68,7 @@ begin
 			clk_clk            => CLOCK_50,            --         clk.clk
 			reset_reset_n      => RESET_N,      --       reset.reset_n
 			hex0_export         => HEX0,         --         hex.export
-			leds_export => leds,
+			leds_export => LEDS,
 			pushbutton_export => KEY(3 downto 1), -- pushbuttons.export
 			switches_export    => sw_d2     --    switches.export
 		);

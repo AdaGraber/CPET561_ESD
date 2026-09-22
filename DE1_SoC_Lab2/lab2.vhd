@@ -46,7 +46,7 @@ begin
     if (rising_edge(CLOCK_50)) then
       if (reset_n = '0') then
         cntr  <= "00" & x"000000";
-        sw_d1 <= x"00";
+        sw_d1 <= "00"x;
         sw_d2 <= x"00";
       else
         cntr  <= cntr + ("00" & x"000001");
