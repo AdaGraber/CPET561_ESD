@@ -1,0 +1,16 @@
+#include "io.h"
+#include <stdio.h>
+#include "system.h"
+#include "alt_types.h"
+#include "sys/alt_irq.h"
+#include "altera_avalon_timer_regs.h"
+#include "altera_avalon_timer.h"
+
+// create standard embedded type definitions
+typedef   signed char   sint8;              // signed 8 bit values
+typedef unsigned char   uint8;              // unsigned 8 bit values
+typedef   signed short  sint16;             // signed 16 bit values
+typedef unsigned short  uint16;             // unsigned 16 bit values
+typedef   signed long   sint32;             // signed 32 bit values
+typedef unsigned long   uint32;             // unsigned 32 bit values
+typedef         float   real32;             // 32 bit real values

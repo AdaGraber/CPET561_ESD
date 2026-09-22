@@ -1,0 +1,69 @@
+//includes
+#include "io.h"
+#include <stdio.h>
+#include "system.h"
+#include "alt_types.h"
+#include "sys/alt_irq.h"
+#include "altera_avalon_timer_regs.h"
+#include "altera_avalon_timer.h"
+
+// create standard embedded type definitions
+typedef   signed char   sint8;              // signed 8 bit values
+typedef unsigned char   uint8;              // unsigned 8 bit values
+typedef   signed short  sint16;             // signed 16 bit values
+typedef unsigned short  uint16;             // unsigned 16 bit values
+typedef   signed long   sint32;             // signed 32 bit values
+typedef unsigned long   uint32;             // unsigned 32 bit values
+typedef         float   real32;             // 32 bit real values
+
+
+//function setup
+void increaseHex(void);
+void decreaseHex(void);
+
+//variables and arrays
+uint32* timerPtr    = (uint32*)TIMER_0_BASE;
+uint16* keyPtr = (uint16*)PUSHBUTTON_BASE;
+uint8* ledPtr = (uint8*)LEDS_BASE;
+uint8* hexPtr = (uint8*)HEX0_BASE;
+uint8* swPtr = (uint8*)SWITCHES_BASE;
+uint8* hexValues[10] = {0x40, 0xF9, 0x24, 0x30, 0x19, 0x12, 0x02, 0xF8, 0x00, 0x10}; // 7-segment display values for numbers 0-9
+uint8 currentHexValue = 0; // variable to hold the current value of the LEDs
+
+
+int main(void) {
+    while(1){
+
+        if((*swPtr & 0x01) == 1){
+            if((*keyPtr & 0x01) == 0){
+                increaseHex();
+            }
+        }
+        else if ((*swPtr & 0x01) == 0){
+            if((*keyPtr & 0x01) == 0){
+                decreaseHex();
+            }
+        }
+    }
+
+}
+
+void increaseHex(void){
+    if(currentHexValue == 9){
+        return;
+    }
+    else{
+        currentHexValue++;
+        *hexPtr = hexValues[currentHexValue];
+    }
+}
+
+void decreaseHex(void){
+    if(currentHexValue == 0){
+        return;
+    }
+    else{
+        currentHexValue--;
+        *hexPtr = hexValues[currentHexValue];
+    }
+}
