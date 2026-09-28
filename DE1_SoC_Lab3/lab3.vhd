@@ -36,8 +36,6 @@ architecture lab3_arch of lab3 is
 
 begin
 
-  LEDS(7 downto 0) <= "1" & ledNios & led0;
-  led0             <= cntr(24);
 
   synchReset_proc : process (CLOCK_50) begin
     if (rising_edge(CLOCK_50)) then

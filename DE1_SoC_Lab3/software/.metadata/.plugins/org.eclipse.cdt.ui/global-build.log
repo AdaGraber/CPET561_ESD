@@ -1,6 +1,69 @@
-22:48:08 **** Clean-only build of configuration Nios II for project nios_software_bsp ****
-make clean 
-[BSP clean complete]
-22:48:15 **** Clean-only build of configuration Nios II for project nios_software ****
-make clean 
-[nios_software clean complete]
+16:06:37 **** Incremental Build of configuration Nios II for project nios_software ****
+make all 
+Info: Building ../nios_software_bsp/
+C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_software_bsp/
+[BSP build complete]
+Info: Compiling lab3_timer_isr.c to obj/default/lab3_timer_isr.o
+nios2-elf-gcc -xc -MP -MMD -c -I../nios_software_bsp//HAL/inc -I../nios_software_bsp/ -I../nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/lab3_timer_isr.o lab3_timer_isr.c
+lab3_timer_isr.c:26:25: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+ uint8* hexValues[10] = {0x40, 0xF9, 0x24, 0x30, 0x19, 0x12, 0x02, 0xF8, 0x00, 0x10}; // 7-segment display values for numbers 0-9
+                         ^
+lab3_timer_isr.c:26:25: note: (near initialization for 'hexValues[0]')
+lab3_timer_isr.c:26:31: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+ uint8* hexValues[10] = {0x40, 0xF9, 0x24, 0x30, 0x19, 0x12, 0x02, 0xF8, 0x00, 0x10}; // 7-segment display values for numbers 0-9
+                               ^
+lab3_timer_isr.c:26:31: note: (near initialization for 'hexValues[1]')
+lab3_timer_isr.c:26:37: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+ uint8* hexValues[10] = {0x40, 0xF9, 0x24, 0x30, 0x19, 0x12, 0x02, 0xF8, 0x00, 0x10}; // 7-segment display values for numbers 0-9
+                                     ^
+lab3_timer_isr.c:26:37: note: (near initialization for 'hexValues[2]')
+lab3_timer_isr.c:26:43: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+ uint8* hexValues[10] = {0x40, 0xF9, 0x24, 0x30, 0x19, 0x12, 0x02, 0xF8, 0x00, 0x10}; // 7-segment display values for numbers 0-9
+                                           ^
+lab3_timer_isr.c:26:43: note: (near initialization for 'hexValues[3]')
+lab3_timer_isr.c:26:49: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+ uint8* hexValues[10] = {0x40, 0xF9, 0x24, 0x30, 0x19, 0x12, 0x02, 0xF8, 0x00, 0x10}; // 7-segment display values for numbers 0-9
+                                                 ^
+lab3_timer_isr.c:26:49: note: (near initialization for 'hexValues[4]')
+lab3_timer_isr.c:26:55: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+ uint8* hexValues[10] = {0x40, 0xF9, 0x24, 0x30, 0x19, 0x12, 0x02, 0xF8, 0x00, 0x10}; // 7-segment display values for numbers 0-9
+                                                       ^
+lab3_timer_isr.c:26:55: note: (near initialization for 'hexValues[5]')
+lab3_timer_isr.c:26:61: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+ uint8* hexValues[10] = {0x40, 0xF9, 0x24, 0x30, 0x19, 0x12, 0x02, 0xF8, 0x00, 0x10}; // 7-segment display values for numbers 0-9
+                                                             ^
+lab3_timer_isr.c:26:61: note: (near initialization for 'hexValues[6]')
+lab3_timer_isr.c:26:67: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+ uint8* hexValues[10] = {0x40, 0xF9, 0x24, 0x30, 0x19, 0x12, 0x02, 0xF8, 0x00, 0x10}; // 7-segment display values for numbers 0-9
+                                                                   ^
+lab3_timer_isr.c:26:67: note: (near initialization for 'hexValues[7]')
+lab3_timer_isr.c:26:79: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+ uint8* hexValues[10] = {0x40, 0xF9, 0x24, 0x30, 0x19, 0x12, 0x02, 0xF8, 0x00, 0x10}; // 7-segment display values for numbers 0-9
+                                                                               ^
+lab3_timer_isr.c:26:79: note: (near initialization for 'hexValues[9]')
+lab3_timer_isr.c: In function 'main':
+lab3_timer_isr.c:55:13: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+     *hexPtr = hexValues[currentHexValue]; //init to 0
+             ^
+lab3_timer_isr.c: In function 'increaseHex':
+lab3_timer_isr.c:77:17: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+         *hexPtr = hexValues[currentHexValue];
+                 ^
+lab3_timer_isr.c: In function 'decreaseHex':
+lab3_timer_isr.c:90:17: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+         *hexPtr = hexValues[currentHexValue];
+                 ^
+Info: Linking nios_software.elf
+nios2-elf-g++  -T'../nios_software_bsp//linker.x' -msys-crt0='../nios_software_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../nios_software_bsp/   -Wl,-Map=nios_software.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o nios_software.elf obj/default/lab3_timer_isr.o -lm -msys-lib=m
+nios2-elf-insert nios_software.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 84 --sidp 0x11060 --timestamp 1790043678 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/ilg9251/repos/CPET561_ESD/DE1_SoC_Lab3" --jdi ../..//output_files/lab3.jdi --sopcinfo C:/Users/ilg9251/repos/CPET561_ESD/DE1_SoC_Lab3/software/nios_software_bsp/../../nios_system.sopcinfo
+Info: (nios_software.elf) 16 KBytes program size (code + initialized data).
+Info:                     10 KBytes free for stack + heap.
+Info: Creating nios_software.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source nios_software.elf >nios_software.objdump
+[nios_software build complete]
+16:06:41 **** Incremental Build of configuration Nios II for project nios_software ****
+make all 
+Info: Building ../nios_software_bsp/
+C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_software_bsp/
+[BSP build complete]
+[nios_software build complete]
