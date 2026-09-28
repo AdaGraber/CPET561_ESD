@@ -1,4 +1,4 @@
-16:06:37 **** Incremental Build of configuration Nios II for project nios_software ****
+16:13:37 **** Incremental Build of configuration Nios II for project nios_software ****
 make all 
 Info: Building ../nios_software_bsp/
 C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_software_bsp/
@@ -61,7 +61,7 @@ Info:                     10 KBytes free for stack + heap.
 Info: Creating nios_software.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source nios_software.elf >nios_software.objdump
 [nios_software build complete]
-16:06:41 **** Incremental Build of configuration Nios II for project nios_software ****
+16:13:42 **** Incremental Build of configuration Nios II for project nios_software ****
 make all 
 Info: Building ../nios_software_bsp/
 C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_software_bsp/

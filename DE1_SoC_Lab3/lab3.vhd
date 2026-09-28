@@ -66,7 +66,7 @@ begin
 			clk_clk            => CLOCK_50,            --         clk.clk
 			reset_reset_n      => RESET_N,      --       reset.reset_n
 			hex0_export         => HEX0,         --         hex.export
-			leds_export => LEDS,
+			leds_export => LEDS(7 downto 0),
 			pushbutton_export => KEY(3 downto 1), -- pushbuttons.export
 			switches_export    => sw_d2     --    switches.export
 		);
