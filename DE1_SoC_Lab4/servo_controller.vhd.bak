@@ -1,0 +1,21 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+
+entity lab4 is
+ port(
+    CLOCK_50 : in std_logic;
+	 
+);
+end lab4
+
+architecture servo_controller of lab 4 is
+
+begin
+
+
+
+
+end servo_controller;
