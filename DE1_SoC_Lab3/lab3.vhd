@@ -9,7 +9,7 @@ entity lab3 is
     KEY      : in std_logic_vector(3 downto 0);
     SW       : in std_logic_vector(7 downto 0);
     HEX0     : out std_logic_vector(6 downto 0);
-	 LEDS : out std_logic_vector (7 downto 0));
+	 LEDR : out std_logic_vector (7 downto 0));
 end entity lab3;
 
 architecture lab3_arch of lab3 is
@@ -66,7 +66,7 @@ begin
 			clk_clk            => CLOCK_50,            --         clk.clk
 			reset_reset_n      => RESET_N,      --       reset.reset_n
 			hex0_export         => HEX0,         --         hex.export
-			leds_export => LEDS(7 downto 0),
+			leds_export => LEDR(7 downto 0),
 			pushbutton_export => KEY(3 downto 1), -- pushbuttons.export
 			switches_export    => sw_d2     --    switches.export
 		);

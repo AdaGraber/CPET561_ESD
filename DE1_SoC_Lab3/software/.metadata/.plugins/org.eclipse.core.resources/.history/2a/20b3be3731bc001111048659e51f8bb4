@@ -45,13 +45,10 @@ void pushbutton_isr(void *context){
 
 //interrupt on timer
 void timer_isr(void *context){
-
-	uint8 currentValue;
     //clear flag
     *timerPtr = 0;
 
-    currentValue = *ledPtr;
-    *ledPtr = currentValue + 1; //toggle leds
+    *ledPtr ^= *ledPtr; //toggle leds
 }
 
 int main(void){

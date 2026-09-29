@@ -1,4 +1,4 @@
-16:13:37 **** Incremental Build of configuration Nios II for project nios_software ****
+14:11:58 **** Incremental Build of configuration Nios II for project nios_software ****
 make all 
 Info: Building ../nios_software_bsp/
 C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_software_bsp/
@@ -42,26 +42,26 @@ lab3_timer_isr.c:26:79: warning: initialization makes pointer from integer witho
                                                                                ^
 lab3_timer_isr.c:26:79: note: (near initialization for 'hexValues[9]')
 lab3_timer_isr.c: In function 'main':
-lab3_timer_isr.c:55:13: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+lab3_timer_isr.c:58:13: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
      *hexPtr = hexValues[currentHexValue]; //init to 0
              ^
 lab3_timer_isr.c: In function 'increaseHex':
-lab3_timer_isr.c:77:17: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+lab3_timer_isr.c:80:17: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
          *hexPtr = hexValues[currentHexValue];
                  ^
 lab3_timer_isr.c: In function 'decreaseHex':
-lab3_timer_isr.c:90:17: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+lab3_timer_isr.c:93:17: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
          *hexPtr = hexValues[currentHexValue];
                  ^
 Info: Linking nios_software.elf
 nios2-elf-g++  -T'../nios_software_bsp//linker.x' -msys-crt0='../nios_software_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../nios_software_bsp/   -Wl,-Map=nios_software.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o nios_software.elf obj/default/lab3_timer_isr.o -lm -msys-lib=m
-nios2-elf-insert nios_software.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 84 --sidp 0x11060 --timestamp 1790043678 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/ilg9251/repos/CPET561_ESD/DE1_SoC_Lab3" --jdi ../..//output_files/lab3.jdi --sopcinfo C:/Users/ilg9251/repos/CPET561_ESD/DE1_SoC_Lab3/software/nios_software_bsp/../../nios_system.sopcinfo
+nios2-elf-insert nios_software.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 84 --sidp 0x11060 --timestamp 1790043678 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab3" --jdi ../..//output_files/lab3.jdi --sopcinfo C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab3/software/nios_software_bsp/../../nios_system.sopcinfo
 Info: (nios_software.elf) 16 KBytes program size (code + initialized data).
 Info:                     10 KBytes free for stack + heap.
 Info: Creating nios_software.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source nios_software.elf >nios_software.objdump
 [nios_software build complete]
-16:13:42 **** Incremental Build of configuration Nios II for project nios_software ****
+14:12:03 **** Incremental Build of configuration Nios II for project nios_software ****
 make all 
 Info: Building ../nios_software_bsp/
 C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_software_bsp/

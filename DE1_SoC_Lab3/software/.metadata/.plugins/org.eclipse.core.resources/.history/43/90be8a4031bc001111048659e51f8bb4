@@ -51,7 +51,7 @@ void timer_isr(void *context){
     *timerPtr = 0;
 
     currentValue = *ledPtr;
-    *ledPtr = currentValue + 1; //toggle leds
+    *ledPtr ^= *ledPtr; //toggle leds
 }
 
 int main(void){
