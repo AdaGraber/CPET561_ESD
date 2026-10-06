@@ -1,0 +1,80 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+entity nios_system_int is
+  port (
+    CLOCK_50                     : in std_logic;
+    SW                           : in std_logic_vector(7 downto 0);
+    HEX5, HEX4, HEX2, HEX1, HEX0 : out std_logic_vector(6 downto 0);
+    KEY                          : in std_logic_vector(3 downto 0);
+    PWM                          : out std_logic
+  );
+end nios_system_int;
+
+architecture arch of nios_system_int is
+  --inst component
+  component nios_system is
+    port (
+      clk_clk           : in std_logic := 'X'; -- clk
+      reset_reset_n     : in std_logic := 'X'; -- reset_n
+      hex5_export       : out std_logic_vector(6 downto 0); -- export
+      hex4_export       : out std_logic_vector(6 downto 0); -- export
+      hex2_export       : out std_logic_vector(6 downto 0); -- export
+      hex1_export       : out std_logic_vector(6 downto 0); -- export
+      hex0_export       : out std_logic_vector(6 downto 0); -- export
+      pushbutton_export : in std_logic_vector(2 downto 0) := (others => 'X'); -- export
+      switches_export   : in std_logic_vector(7 downto 0) := (others => 'X'); -- export
+      servo_pwm_pwm     : out std_logic -- pwm
+    );
+  end component nios_system;
+
+  --signals
+  signal key_d1  : std_logic_vector(3 downto 0);
+  signal key_d2  : std_logic_vector(3 downto 0);
+  signal key_d3  : std_logic_vector(3 downto 0);
+  signal sw_d1   : std_logic_vector(7 downto 0);
+  signal sw_d2   : std_logic_vector(7 downto 0);
+  signal reset_n : std_logic;
+
+begin
+  --sync PB
+  synchReset_proc : process (CLOCK_50) begin
+    if (rising_edge(CLOCK_50)) then
+      key_d1 <= KEY;
+      key_d2 <= key_d1;
+      key_d3 <= key_d2;
+    end if;
+  end process synchReset_proc;
+  reset_n <= key_d3(0);
+
+  --sync switches
+  synchUserIn_proc : process (CLOCK_50) begin
+    if (rising_edge(CLOCK_50)) then
+      if (reset_n = '0') then
+        sw_d1 <= x"00";
+        sw_d2 <= x"00";
+      else
+        sw_d1 <= SW;
+        sw_d2 <= sw_d1;
+      end if;
+    end if;
+  end process synchUserIn_proc;
+  --port map
+  u0 : component nios_system
+    port map
+    (
+      clk_clk           => CLOCK_50, --        clk.clk
+      reset_reset_n     => RESET_N, --      reset.reset_n
+      hex5_export       => hex5, --       hex5.export
+      hex4_export       => hex4, --       hex4.export
+      hex2_export       => hex2, --       hex2.export
+      hex1_export       => hex1, --       hex1.export
+      hex0_export       => hex0, --       hex0.export
+      pushbutton_export => key_d3(3 downto 1), -- pushbutton.export
+      switches_export   => SW_d2, --   switches.export
+      servo_pwm_pwm     => PWM --  servo_pwm.pwm
+    );
+
+  end arch;

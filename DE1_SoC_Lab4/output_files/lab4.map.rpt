@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab4
-Mon Sep 28 16:43:09 2026
+Tue Oct 06 14:45:33 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -10,7 +10,16 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |servo_controller|present_state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -33,22 +42,27 @@ refer to the applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+-----------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Mon Sep 28 16:43:09 2026               ;
-; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
-; Revision Name               ; lab4                                            ;
-; Top-level Entity Name       ; lab4                                            ;
-; Family                      ; Cyclone V                                       ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                       ;
-; Total registers             ; N/A until Partition Merge                       ;
-; Total pins                  ; N/A until Partition Merge                       ;
-; Total virtual pins          ; N/A until Partition Merge                       ;
-; Total block memory bits     ; N/A until Partition Merge                       ;
-; Total PLLs                  ; N/A until Partition Merge                       ;
-; Total DLLs                  ; N/A until Partition Merge                       ;
-+-----------------------------+-------------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++---------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Oct 06 14:45:33 2026           ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
+; Revision Name                   ; lab4                                            ;
+; Top-level Entity Name           ; servo_controller                                ;
+; Family                          ; Cyclone V                                       ;
+; Logic utilization (in ALMs)     ; N/A                                             ;
+; Total registers                 ; 71                                              ;
+; Total pins                      ; 6                                               ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 0                                               ;
+; Total DSP Blocks                ; 0                                               ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 0                                               ;
+; Total DLLs                      ; 0                                               ;
++---------------------------------+-------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -57,7 +71,7 @@ refer to the applicable agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; lab4               ; lab4               ;
+; Top-level entity name                                                           ; servo_controller   ; lab4               ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -147,11 +161,209 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 10          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 10          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-10        ;   0.0%      ;
 +----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                        ;
++----------------------------------+-----------------+-----------------------+------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                           ; Library ;
++----------------------------------+-----------------+-----------------------+------------------------------------------------------------------------+---------+
+; servo_controller.vhd             ; yes             ; Auto-Found VHDL File  ; C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab4/servo_controller.vhd ;         ;
++----------------------------------+-----------------+-----------------------+------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimate of Logic utilization (ALMs needed) ; 90           ;
+;                                             ;              ;
+; Combinational ALUT usage for logic          ; 144          ;
+;     -- 7 input functions                    ; 0            ;
+;     -- 6 input functions                    ; 36           ;
+;     -- 5 input functions                    ; 7            ;
+;     -- 4 input functions                    ; 11           ;
+;     -- <=3 input functions                  ; 90           ;
+;                                             ;              ;
+; Dedicated logic registers                   ; 71           ;
+;                                             ;              ;
+; I/O pins                                    ; 6            ;
+;                                             ;              ;
+; Total DSP Blocks                            ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; CLK_50~input ;
+; Maximum fan-out                             ; 71           ;
+; Total fan-out                               ; 787          ;
+; Average fan-out                             ; 3.47         ;
++---------------------------------------------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name      ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+------------------+--------------+
+; |servo_controller          ; 144 (144)           ; 71 (71)                   ; 0                 ; 0          ; 6    ; 0            ; |servo_controller   ; servo_controller ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |servo_controller|present_state                                                                                     ;
++---------------------------+-------------------------+------------------------+--------------------------+---------------------------+
+; Name                      ; present_state.IRQ_RIGHT ; present_state.IRQ_LEFT ; present_state.SWEEP_LEFT ; present_state.SWEEP_RIGHT ;
++---------------------------+-------------------------+------------------------+--------------------------+---------------------------+
+; present_state.SWEEP_RIGHT ; 0                       ; 0                      ; 0                        ; 0                         ;
+; present_state.SWEEP_LEFT  ; 0                       ; 0                      ; 1                        ; 1                         ;
+; present_state.IRQ_LEFT    ; 0                       ; 1                      ; 0                        ; 1                         ;
+; present_state.IRQ_RIGHT   ; 1                       ; 0                      ; 0                        ; 1                         ;
++---------------------------+-------------------------+------------------------+--------------------------+---------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; count_registers[1][31]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[1][30]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[1][29]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[1][28]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[1][27]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[1][26]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[1][25]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[1][24]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[1][23]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[1][22]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[1][21]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[1][20]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[1][19]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[1][18]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[1][17]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[1][16]                 ; Stuck at VCC due to stuck port data_in ;
+; count_registers[1][11]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[1][9]                  ; Stuck at VCC due to stuck port data_in ;
+; count_registers[1][6]                  ; Stuck at GND due to stuck port data_in ;
+; count_registers[1][2]                  ; Stuck at GND due to stuck port data_in ;
+; count_registers[1][1]                  ; Stuck at GND due to stuck port data_in ;
+; count_registers[1][0]                  ; Stuck at GND due to stuck port data_in ;
+; count_registers[0][31]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[0][30]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[0][29]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[0][28]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[0][27]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[0][26]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[0][25]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[0][24]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[0][23]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[0][22]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[0][21]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[0][20]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[0][19]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[0][18]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[0][17]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[0][16]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[0][15]                 ; Stuck at VCC due to stuck port data_in ;
+; count_registers[0][14]                 ; Stuck at VCC due to stuck port data_in ;
+; count_registers[0][13]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[0][11]                 ; Stuck at GND due to stuck port data_in ;
+; count_registers[0][9]                  ; Stuck at VCC due to stuck port data_in ;
+; count_registers[0][6]                  ; Stuck at VCC due to stuck port data_in ;
+; count_registers[0][5]                  ; Stuck at GND due to stuck port data_in ;
+; count_registers[0][4]                  ; Stuck at VCC due to stuck port data_in ;
+; count_registers[0][2]                  ; Stuck at GND due to stuck port data_in ;
+; count_registers[0][1]                  ; Stuck at GND due to stuck port data_in ;
+; count_registers[0][0]                  ; Stuck at GND due to stuck port data_in ;
+; count_registers[1][15]                 ; Merged with count_registers[1][10]     ;
+; count_registers[1][5]                  ; Merged with count_registers[1][10]     ;
+; count_registers[1][7]                  ; Merged with count_registers[1][10]     ;
+; count_registers[1][13]                 ; Merged with count_registers[1][12]     ;
+; count_registers[1][14]                 ; Merged with count_registers[1][12]     ;
+; count_registers[1][3]                  ; Merged with count_registers[1][12]     ;
+; count_registers[1][4]                  ; Merged with count_registers[1][12]     ;
+; count_registers[1][8]                  ; Merged with count_registers[1][12]     ;
+; count_registers[0][12]                 ; Merged with count_registers[0][10]     ;
+; count_registers[0][3]                  ; Merged with count_registers[0][10]     ;
+; count_registers[0][7]                  ; Merged with count_registers[0][10]     ;
+; count_registers[0][8]                  ; Merged with count_registers[0][10]     ;
+; count_registers[1][12]                 ; Merged with count_registers[1][10]     ;
+; Total Number of Removed Registers = 62 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 71    ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 71    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 31    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; angle_count[6]                         ; 6       ;
+; angle_count[4]                         ; 5       ;
+; angle_count[14]                        ; 6       ;
+; angle_count[9]                         ; 6       ;
+; angle_count[8]                         ; 7       ;
+; angle_count[15]                        ; 5       ;
+; count_registers[1][10]                 ; 3       ;
+; Total number of inverted registers = 7 ;         ;
++----------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 71                          ;
+;     CLR               ; 8                           ;
+;     CLR SCLR          ; 32                          ;
+;     ENA CLR           ; 31                          ;
+; arriav_lcell_comb     ; 144                         ;
+;     arith             ; 63                          ;
+;         1 data inputs ; 33                          ;
+;         2 data inputs ; 30                          ;
+;     normal            ; 81                          ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 15                          ;
+;         3 data inputs ; 6                           ;
+;         4 data inputs ; 11                          ;
+;         5 data inputs ; 7                           ;
+;         6 data inputs ; 36                          ;
+; boundary_port         ; 6                           ;
+;                       ;                             ;
+; Max LUT depth         ; 4.10                        ;
+; Average LUT depth     ; 3.30                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -160,18 +372,31 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Mon Sep 28 16:43:02 2026
+    Info: Processing started: Tue Oct 06 14:45:24 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab4 -c lab4
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
-Error (10500): VHDL syntax error at servo_controller.vhd(9) near text "generic";  expecting an identifier ("generic" is a reserved keyword), or "constant", or "file", or "signal", or "variable" File: C:/Users/ilg9251/repos/CPET561_ESD/DE1_SoC_Lab4/servo_controller.vhd Line: 9
-Error (10500): VHDL syntax error at servo_controller.vhd(13) near text "CLK_50";  expecting "end", or "begin", or a declaration statement File: C:/Users/ilg9251/repos/CPET561_ESD/DE1_SoC_Lab4/servo_controller.vhd Line: 13
-Error (10523): Ignored construct servo_controller at servo_controller.vhd(7) due to previous errors File: C:/Users/ilg9251/repos/CPET561_ESD/DE1_SoC_Lab4/servo_controller.vhd Line: 7
-Info (12021): Found 0 design units, including 0 entities, in source file servo_controller.vhd
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 1 warning
-    Error: Peak virtual memory: 4850 megabytes
-    Error: Processing ended: Mon Sep 28 16:43:09 2026
-    Error: Elapsed time: 00:00:07
-    Error: Total CPU time (on all processors): 00:00:17
+Warning (12019): Can't analyze file -- file ../../../repos/CPET561_ESD/DE1_SoC_Lab4/servo_controller.vhd is missing
+Warning (12125): Using design file servo_controller.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: servo_controller-arch File: C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab4/servo_controller.vhd Line: 18
+    Info (12023): Found entity 1: servo_controller File: C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab4/servo_controller.vhd Line: 6
+Info (12127): Elaborating entity "servo_controller" for the top level hierarchy
+Warning (10540): VHDL Signal Declaration warning at servo_controller.vhd(28): used explicit default value for signal "writelow" because signal was never assigned a value File: C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab4/servo_controller.vhd Line: 28
+Warning (10540): VHDL Signal Declaration warning at servo_controller.vhd(29): used explicit default value for signal "writehigh" because signal was never assigned a value File: C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab4/servo_controller.vhd Line: 29
+Warning (10812): VHDL warning at servo_controller.vhd(72): sensitivity list already contains address File: C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab4/servo_controller.vhd Line: 72
+Warning (10631): VHDL Process Statement warning at servo_controller.vhd(109): inferring latch(es) for signal or variable "angle_count", which holds its previous value in one or more paths through the process File: C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab4/servo_controller.vhd Line: 109
+Info (10041): Inferred latch for "angle_count[0]" at servo_controller.vhd(109) File: C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab4/servo_controller.vhd Line: 109
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 150 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 2 output pins
+    Info (21061): Implemented 144 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 4910 megabytes
+    Info: Processing ended: Tue Oct 06 14:45:33 2026
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:19
 
 
