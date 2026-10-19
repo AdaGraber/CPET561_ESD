@@ -5,8 +5,7 @@
 #include "system.h"
 #include "alt_types.h"
 #include "sys/alt_irq.h"
-#include "altera_avalon_timer_regs.h"
-#include "altera_avalon_timer.h"
+
 
 // create standard embedded type definitions
 typedef   signed char   sint8;              // signed 8 bit values
@@ -22,7 +21,7 @@ void inputMinimum(void);
 void inputMaximum(void);
 
 //vars
-uint8* hexValues[10] = {0x40, 0xF9, 0x24, 0x30, 0x19, 0x12, 0x02, 0xF8, 0x00, 0x10}; // 7-segment display values for numbers 0-9
+uint8 hexValues[10] = {0x40, 0xF9, 0x24, 0x30, 0x19, 0x12, 0x02, 0xF8, 0x00, 0x10}; // 7-segment display values for numbers 0-9
 uint8* keyPtr = (uint8*)PUSHBUTTON_BASE;
 uint8* swPtr = (uint8*)SWITCHES_BASE;
 uint8* hex0Ptr = (uint8*)HEX0_BASE;
@@ -35,14 +34,16 @@ uint8 minAngle = 45;
 uint8 maxAngle = 135;
 uint8 pressedKey3 = 0;
 uint8 pressedKey2 = 0;
+uint8 minAngleCount = 50000;
+uint8 maxAngleCount = 100000;
 
 //interrupt functions
 void pushbutton_isr(void *context){
     if(*swPtr >= minAngle && *swPtr <= maxAngle){
-        if((*keyPtr & 0x04) == 0){
+        if((*(keyPtr + 12) & 0x04) == 0){
             pressedKey2 = 1;
         }
-        else if ((*keyPtr & 0x08) == 0){
+        else if ((*(keyPtr + 12) & 0x08) == 0){
             pressedKey3 = 1;
         }
     }
@@ -50,38 +51,68 @@ void pushbutton_isr(void *context){
 }
 
 void servo_controller_isr(void *context){
-
+    *(servoConPtr + 0) = minAngleCount;
+    *(servoConPtr + 1) = maxAngleCount;
 }
 
 //main
 int main(void) {
-    //load the servo controller with min and max addresses
+    //load the servo controller with min and max addresses, display on hex.
 
+	*(servoConPtr + 0) = minAngleCount;
+    *(servoConPtr + 1) = maxAngleCount;
+
+    *hex5Ptr = hexValues[4];
+    *hex4Ptr = hexValues[5];
+    *hex2Ptr = hexValues[1];
+    *hex1Ptr = hexValues[3];
+    *hex0Ptr = hexValues[5];
+    
     //bind interrupt functions and enable them
     alt_ic_isr_register(PUSHBUTTON_IRQ_INTERRUPT_CONTROLLER_ID,PUSHBUTTON_IRQ,pushbutton_isr,0,0);
-    *(keyPtr + 8) = 1;
+    *(keyPtr + 8) = 6;
 
     alt_ic_isr_register(SERVO_CONTROLLER_0_IRQ_INTERRUPT_CONTROLLER_ID, SERVO_CONTROLLER_0_IRQ, servo_controller_isr, 0, 0);
     
     while(1){
-        if(pressedKey2){
+        if(pressedKey2 == 1){
             inputMinimum();
         }
-        else if(pressedKey3){
+        else if(pressedKey3 == 1){
             inputMaximum();
         }
     }
     return 0;
 }
 
-inputMaximum(void){
+void inputMaximum(void){
     //send the max to the custom component
+    *(servoConPtr + 1) = 555*(*swPtr)+25000;
 
     //register the input as hex to hex 0-2
-    
+    uint8 hundredsPlace = *swPtr / 100;
+    uint8 tensPlace = (*swPtr % 100) / 10;
+    uint8 onesPlace = (*swPtr % 100) % 10;
+
+    *hex0Ptr = hexValues[onesPlace];
+    *hex1Ptr = hexValues[tensPlace];
+    *hex2Ptr = hexValues[hundredsPlace];
+
+    //clean up and exit function
+    pressedKey3 = 0;
 }
-inputMinimum(void){
+void inputMinimum(void){
     //send the min to the custom component
+    *(servoConPtr + 0) = 555*(*swPtr)+25000;
 
     //register the input as hex to hex 4 and 5
+    uint8 tensPlace = (*swPtr % 100) / 10;
+    uint8 onesPlace = (*swPtr % 100) % 10;
+
+    *hex4Ptr = hexValues[onesPlace];
+    *hex5Ptr = hexValues[tensPlace];
+
+    //clean up and exit function
+    pressedKey2 = 0;
 }
+

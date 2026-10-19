@@ -232,20 +232,6 @@ architecture rtl of nios_system is
 		);
 	end component nios_system_irq_mapper;
 
-	component altera_irq_clock_crosser is
-		generic (
-			IRQ_WIDTH : integer := 1
-		);
-		port (
-			receiver_clk   : in  std_logic                    := 'X';             -- clk
-			sender_clk     : in  std_logic                    := 'X';             -- clk
-			receiver_reset : in  std_logic                    := 'X';             -- reset
-			sender_reset   : in  std_logic                    := 'X';             -- reset
-			receiver_irq   : in  std_logic_vector(0 downto 0) := (others => 'X'); -- irq
-			sender_irq     : out std_logic_vector(0 downto 0)                     -- irq
-		);
-	end component altera_irq_clock_crosser;
-
 	component nios_system_rst_controller is
 		generic (
 			NUM_RESET_INPUTS          : integer := 6;
@@ -449,12 +435,11 @@ architecture rtl of nios_system is
 	signal mm_interconnect_0_onchip_memory2_0_s1_write                     : std_logic;                     -- mm_interconnect_0:onchip_memory2_0_s1_write -> onchip_memory2_0:write
 	signal mm_interconnect_0_onchip_memory2_0_s1_writedata                 : std_logic_vector(31 downto 0); -- mm_interconnect_0:onchip_memory2_0_s1_writedata -> onchip_memory2_0:writedata
 	signal mm_interconnect_0_onchip_memory2_0_s1_clken                     : std_logic;                     -- mm_interconnect_0:onchip_memory2_0_s1_clken -> onchip_memory2_0:clken
+	signal irq_mapper_receiver0_irq                                        : std_logic;                     -- servo_controller_0:irq -> irq_mapper:receiver0_irq
 	signal irq_mapper_receiver1_irq                                        : std_logic;                     -- pushbutton:irq -> irq_mapper:receiver1_irq
 	signal irq_mapper_receiver2_irq                                        : std_logic;                     -- jtag_uart_0:av_irq -> irq_mapper:receiver2_irq
 	signal nios2_gen2_0_irq_irq                                            : std_logic_vector(31 downto 0); -- irq_mapper:sender_irq -> nios2_gen2_0:irq
-	signal irq_mapper_receiver0_irq                                        : std_logic;                     -- irq_synchronizer:sender_irq -> irq_mapper:receiver0_irq
-	signal irq_synchronizer_receiver_irq                                   : std_logic_vector(0 downto 0);  -- servo_controller_0:irq -> irq_synchronizer:receiver_irq
-	signal rst_controller_reset_out_reset                                  : std_logic;                     -- rst_controller:reset_out -> [irq_mapper:reset, irq_synchronizer:sender_reset, mm_interconnect_0:nios2_gen2_0_reset_reset_bridge_in_reset_reset, rst_controller_reset_out_reset:in, rst_translator:in_reset]
+	signal rst_controller_reset_out_reset                                  : std_logic;                     -- rst_controller:reset_out -> [irq_mapper:reset, mm_interconnect_0:nios2_gen2_0_reset_reset_bridge_in_reset_reset, rst_controller_reset_out_reset:in, rst_translator:in_reset]
 	signal rst_controller_reset_out_reset_req                              : std_logic;                     -- rst_controller:reset_req -> [nios2_gen2_0:reset_req, rst_translator:reset_req_in]
 	signal nios2_gen2_0_debug_reset_request_reset                          : std_logic;                     -- nios2_gen2_0:debug_reset_request -> rst_controller:reset_in1
 	signal rst_controller_001_reset_out_reset                              : std_logic;                     -- rst_controller_001:reset_out -> [mm_interconnect_0:servo_controller_0_reset_reset_bridge_in_reset_reset, onchip_memory2_0:reset, rst_controller_001_reset_out_reset:in]
@@ -612,7 +597,7 @@ begin
 			writedata       => mm_interconnect_0_servo_controller_0_avalon_slave_0_writedata,  --                 .writedata
 			reset_n         => rst_controller_001_reset_out_reset_ports_inv,                   --            reset.reset_n
 			out_wave_export => servo_pwm_pwm,                                                  --      conduit_end.pwm
-			irq             => irq_synchronizer_receiver_irq(0),                               -- interrupt_sender.irq
+			irq             => irq_mapper_receiver0_irq,                                       -- interrupt_sender.irq
 			CLK_50          => clk_clk                                                         --       clock_sink.clk
 		);
 
@@ -719,19 +704,6 @@ begin
 			receiver1_irq => irq_mapper_receiver1_irq,       -- receiver1.irq
 			receiver2_irq => irq_mapper_receiver2_irq,       -- receiver2.irq
 			sender_irq    => nios2_gen2_0_irq_irq            --    sender.irq
-		);
-
-	irq_synchronizer : component altera_irq_clock_crosser
-		generic map (
-			IRQ_WIDTH => 1
-		)
-		port map (
-			receiver_clk   => clk_clk,                        --       receiver_clk.clk
-			sender_clk     => clk_clk,                        --         sender_clk.clk
-			receiver_reset => open,                           -- receiver_clk_reset.reset
-			sender_reset   => rst_controller_reset_out_reset, --   sender_clk_reset.reset
-			receiver_irq   => irq_synchronizer_receiver_irq,  --           receiver.irq
-			sender_irq(0)  => irq_mapper_receiver0_irq        --             sender.irq
 		);
 
 	rst_controller : component nios_system_rst_controller
