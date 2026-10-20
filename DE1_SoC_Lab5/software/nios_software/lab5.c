@@ -29,13 +29,13 @@ uint8* hex1Ptr = (uint8*)HEX1_BASE;
 uint8* hex2Ptr = (uint8*)HEX2_BASE;
 uint8* hex4Ptr = (uint8*)HEX4_BASE;
 uint8* hex5Ptr = (uint8*)HEX5_BASE;
-uint8* servoConPtr = (uint8*)SERVO_CONTROLLER_0_BASE;
+uint32* servoConPtr = (uint8*)SERVO_CONTROLLER_0_BASE;
 uint8 minAngle = 45;
 uint8 maxAngle = 135;
 uint8 pressedKey3 = 0;
 uint8 pressedKey2 = 0;
-uint8 minAngleCount = 50000;
-uint8 maxAngleCount = 100000;
+uint32 minAngleCount = 50000;
+uint32 maxAngleCount = 100000;
 
 //interrupt functions
 void pushbutton_isr(void *context){
@@ -47,7 +47,7 @@ void pushbutton_isr(void *context){
             pressedKey3 = 1;
         }
     }
-    *(keyPtr + 12) = 1;
+    *(keyPtr + 12) = 0;
 }
 
 void servo_controller_isr(void *context){
@@ -58,7 +58,6 @@ void servo_controller_isr(void *context){
 //main
 int main(void) {
     //load the servo controller with min and max addresses, display on hex.
-
 	*(servoConPtr + 0) = minAngleCount;
     *(servoConPtr + 1) = maxAngleCount;
 
@@ -87,31 +86,31 @@ int main(void) {
 
 void inputMaximum(void){
     //send the max to the custom component
-    *(servoConPtr + 1) = 555*(*swPtr)+25000;
+	if(*swPtr >= ((minAngleCount-25000)/555)){
+	    maxAngleCount = 555*(*swPtr)+25000;
+	    //register the input as hex to hex 0-2
+	    uint8 hundredsPlace = *swPtr / 100;
+	    uint8 tensPlace = (*swPtr % 100) / 10;
+	    uint8 onesPlace = (*swPtr % 100) % 10;
 
-    //register the input as hex to hex 0-2
-    uint8 hundredsPlace = *swPtr / 100;
-    uint8 tensPlace = (*swPtr % 100) / 10;
-    uint8 onesPlace = (*swPtr % 100) % 10;
-
-    *hex0Ptr = hexValues[onesPlace];
-    *hex1Ptr = hexValues[tensPlace];
-    *hex2Ptr = hexValues[hundredsPlace];
-
+	    *hex0Ptr = hexValues[onesPlace];
+	    *hex1Ptr = hexValues[tensPlace];
+	    *hex2Ptr = hexValues[hundredsPlace];
+	}
     //clean up and exit function
     pressedKey3 = 0;
 }
 void inputMinimum(void){
     //send the min to the custom component
-    *(servoConPtr + 0) = 555*(*swPtr)+25000;
+	if(*swPtr <= (maxAngleCount-25000)/555){
+	    minAngleCount = 555*(*swPtr)+25000;
+	    //register the input as hex to hex 4 and 5
+	    uint8 tensPlace = (*swPtr % 100) / 10;
+	    uint8 onesPlace = (*swPtr % 100) % 10;
 
-    //register the input as hex to hex 4 and 5
-    uint8 tensPlace = (*swPtr % 100) / 10;
-    uint8 onesPlace = (*swPtr % 100) % 10;
-
-    *hex4Ptr = hexValues[onesPlace];
-    *hex5Ptr = hexValues[tensPlace];
-
+	    *hex4Ptr = hexValues[onesPlace];
+	    *hex5Ptr = hexValues[tensPlace];
+	}
     //clean up and exit function
     pressedKey2 = 0;
 }

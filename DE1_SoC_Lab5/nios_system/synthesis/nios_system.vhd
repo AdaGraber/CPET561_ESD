@@ -118,8 +118,8 @@ architecture rtl of nios_system is
 			writedata       : in  std_logic_vector(31 downto 0) := (others => 'X'); -- writedata
 			reset_n         : in  std_logic                     := 'X';             -- reset_n
 			out_wave_export : out std_logic;                                        -- pwm
-			irq             : out std_logic;                                        -- irq
-			CLK_50          : in  std_logic                     := 'X'              -- clk
+			CLK_50          : in  std_logic                     := 'X';             -- clk
+			irq             : out std_logic                                         -- irq
 		);
 	end component servo_controller;
 
@@ -592,13 +592,13 @@ begin
 
 	servo_controller_0 : component servo_controller
 		port map (
-			write           => mm_interconnect_0_servo_controller_0_avalon_slave_0_write,      --   avalon_slave_0.write
-			address         => mm_interconnect_0_servo_controller_0_avalon_slave_0_address(0), --                 .address
-			writedata       => mm_interconnect_0_servo_controller_0_avalon_slave_0_writedata,  --                 .writedata
-			reset_n         => rst_controller_001_reset_out_reset_ports_inv,                   --            reset.reset_n
-			out_wave_export => servo_pwm_pwm,                                                  --      conduit_end.pwm
-			irq             => irq_mapper_receiver0_irq,                                       -- interrupt_sender.irq
-			CLK_50          => clk_clk                                                         --       clock_sink.clk
+			write           => mm_interconnect_0_servo_controller_0_avalon_slave_0_write,      --     avalon_slave_0.write
+			address         => mm_interconnect_0_servo_controller_0_avalon_slave_0_address(0), --                   .address
+			writedata       => mm_interconnect_0_servo_controller_0_avalon_slave_0_writedata,  --                   .writedata
+			reset_n         => rst_controller_001_reset_out_reset_ports_inv,                   --              reset.reset_n
+			out_wave_export => servo_pwm_pwm,                                                  --        conduit_end.pwm
+			CLK_50          => clk_clk,                                                        --         clock_sink.clk
+			irq             => irq_mapper_receiver0_irq                                        -- interrupt_sender_1.irq
 		);
 
 	switches : component nios_system_switches

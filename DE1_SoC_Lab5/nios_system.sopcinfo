@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="nios_system" kind="nios_system" version="1.0" fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2026.10.19.15:53:48 -->
+ <!-- 2026.10.20.15:20:55 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1792439627</value>
+  <value>1792524055</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -6697,7 +6697,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="dataSlaveMapParam">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x8000' end='0x10000' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x10800' end='0x11000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='switches.s1' start='0x11000' end='0x11010' type='altera_avalon_pio.s1' /><slave name='pushbutton.s1' start='0x11010' end='0x11020' type='altera_avalon_pio.s1' /><slave name='hex0.s1' start='0x11020' end='0x11030' type='altera_avalon_pio.s1' /><slave name='hex1.s1' start='0x11030' end='0x11040' type='altera_avalon_pio.s1' /><slave name='hex2.s1' start='0x11040' end='0x11050' type='altera_avalon_pio.s1' /><slave name='hex4.s1' start='0x11050' end='0x11060' type='altera_avalon_pio.s1' /><slave name='hex5.s1' start='0x11060' end='0x11070' type='altera_avalon_pio.s1' /><slave name='servo_controller_0.avalon_slave_0' start='0x11078' end='0x11080' type='servo_controller.avalon_slave_0' /><slave name='sysid_qsys_0.control_slave' start='0x11080' end='0x11088' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x11088' end='0x11090' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x8000' end='0x10000' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x10800' end='0x11000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='switches.s1' start='0x11000' end='0x11010' type='altera_avalon_pio.s1' /><slave name='pushbutton.s1' start='0x11010' end='0x11020' type='altera_avalon_pio.s1' /><slave name='hex0.s1' start='0x11020' end='0x11030' type='altera_avalon_pio.s1' /><slave name='hex1.s1' start='0x11030' end='0x11040' type='altera_avalon_pio.s1' /><slave name='hex2.s1' start='0x11040' end='0x11050' type='altera_avalon_pio.s1' /><slave name='hex4.s1' start='0x11050' end='0x11060' type='altera_avalon_pio.s1' /><slave name='hex5.s1' start='0x11060' end='0x11070' type='altera_avalon_pio.s1' /><slave name='sysid_qsys_0.control_slave' start='0x11070' end='0x11078' type='altera_avalon_sysid_qsys.control_slave' /><slave name='servo_controller_0.avalon_slave_0' start='0x11078' end='0x11080' type='servo_controller.avalon_slave_0' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x11080' end='0x11088' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -6826,7 +6826,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="internalIrqMaskSystemInfo">
    <type>long</type>
-   <value>7</value>
+   <value>13</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -7368,7 +7368,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>jtag_uart_0</moduleName>
     <slaveName>avalon_jtag_slave</slaveName>
     <name>jtag_uart_0.avalon_jtag_slave</name>
-    <baseAddress>69768</baseAddress>
+    <baseAddress>69760</baseAddress>
     <span>8</span>
    </memoryBlock>
    <memoryBlock>
@@ -7384,7 +7384,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sysid_qsys_0</moduleName>
     <slaveName>control_slave</slaveName>
     <name>sysid_qsys_0.control_slave</name>
-    <baseAddress>69760</baseAddress>
+    <baseAddress>69744</baseAddress>
     <span>8</span>
    </memoryBlock>
    <memoryBlock>
@@ -7834,9 +7834,9 @@ parameters are a RESULT of the module parameters. -->
    <interrupt>
     <isBridge>false</isBridge>
     <moduleName>servo_controller_0</moduleName>
-    <slaveName>interrupt_sender</slaveName>
-    <name>servo_controller_0.interrupt_sender</name>
-    <interruptNumber>1</interruptNumber>
+    <slaveName>interrupt_sender_1</slaveName>
+    <name>servo_controller_0.interrupt_sender_1</name>
+    <interruptNumber>3</interruptNumber>
    </interrupt>
    <interrupt>
     <isBridge>false</isBridge>
@@ -10556,7 +10556,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="associatedReset">
     <type>java.lang.String</type>
-    <value></value>
+    <value>reset</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -10587,7 +10587,52 @@ parameters are a RESULT of the module parameters. -->
     <role>pwm</role>
    </port>
   </interface>
-  <interface name="interrupt_sender" kind="interrupt_sender" version="18.1">
+  <interface name="clock_sink" kind="clock_sink" version="18.1">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <parameter name="externallyDriven">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="ptfSchematicName">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>clock</type>
+   <isStart>false</isStart>
+   <port>
+    <name>CLK_50</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>clk</role>
+   </port>
+  </interface>
+  <interface name="interrupt_sender_1" kind="interrupt_sender" version="18.1">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -10601,7 +10646,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="associatedClock">
     <type>java.lang.String</type>
-    <value></value>
+    <value>clock_sink</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -10609,7 +10654,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="associatedReset">
     <type>java.lang.String</type>
-    <value></value>
+    <value>reset</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -10662,51 +10707,6 @@ parameters are a RESULT of the module parameters. -->
     <direction>Output</direction>
     <width>1</width>
     <role>irq</role>
-   </port>
-  </interface>
-  <interface name="clock_sink" kind="clock_sink" version="18.1">
-   <!-- The connection points exposed by a module instance for the
-particular module parameters. Connection points and their
-parameters are a RESULT of the module parameters. -->
-   <parameter name="externallyDriven">
-    <type>boolean</type>
-    <value>false</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>false</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="ptfSchematicName">
-    <type>java.lang.String</type>
-    <value></value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>false</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="deviceFamily">
-    <type>java.lang.String</type>
-    <value>UNKNOWN</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="generateLegacySim">
-    <type>boolean</type>
-    <value>false</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <type>clock</type>
-   <isStart>false</isStart>
-   <port>
-    <name>CLK_50</name>
-    <direction>Input</direction>
-    <width>1</width>
-    <role>clk</role>
    </port>
   </interface>
  </module>
@@ -11483,7 +11483,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1792439627</value>
+   <value>1792524055</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -11503,7 +11503,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1792439627</value>
+   <value>1792524055</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -11519,7 +11519,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1792439627</value>
+   <value>1792524055</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -11992,7 +11992,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x00011088</value>
+   <value>0x00011080</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -12094,7 +12094,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x00011080</value>
+   <value>0x00011070</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -13015,14 +13015,14 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>clock_sink</endConnectionPoint>
  </connection>
  <connection
-   name="nios2_gen2_0.irq/servo_controller_0.interrupt_sender"
+   name="nios2_gen2_0.irq/servo_controller_0.interrupt_sender_1"
    kind="interrupt"
    version="18.1"
    start="nios2_gen2_0.irq"
-   end="servo_controller_0.interrupt_sender">
+   end="servo_controller_0.interrupt_sender_1">
   <parameter name="irqNumber">
    <type>int</type>
-   <value>1</value>
+   <value>3</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -13047,7 +13047,7 @@ parameters are a RESULT of the module parameters. -->
   <startModule>nios2_gen2_0</startModule>
   <startConnectionPoint>irq</startConnectionPoint>
   <endModule>servo_controller_0</endModule>
-  <endConnectionPoint>interrupt_sender</endConnectionPoint>
+  <endConnectionPoint>interrupt_sender_1</endConnectionPoint>
  </connection>
  <connection
    name="nios2_gen2_0.irq/pushbutton.irq"

@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Oct 19, 2026 3:58:23 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1792439903045</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Oct 20, 2026 3:25:53 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1792524353432</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\ilg9251\Desktop\CPET561_ESD\DE1_SoC_Lab5\software\nios_software_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\nios_system.sopcinfo</SopcDesignFile>
@@ -947,20 +947,20 @@
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>sysid_qsys_0</slaveDescriptor>
+                <addressRange>0x00011070 - 0x00011077</addressRange>
+                <addressSpan>8</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>servo_controller_0</slaveDescriptor>
                 <addressRange>0x00011078 - 0x0001107F</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>sysid_qsys_0</slaveDescriptor>
-                <addressRange>0x00011080 - 0x00011087</addressRange>
-                <addressSpan>8</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
                 <slaveDescriptor>jtag_uart_0</slaveDescriptor>
-                <addressRange>0x00011088 - 0x0001108F</addressRange>
+                <addressRange>0x00011080 - 0x00011087</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>
