@@ -1,0 +1,28 @@
+15:51:00 **** Incremental Build of configuration Nios II for project nios_software ****
+make all 
+Info: Building ../nios_software_bsp/
+C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_software_bsp/
+[BSP build complete]
+Info: Compiling lab6.c to obj/default/lab6.o
+nios2-elf-gcc -xc -MP -MMD -c -I../nios_software_bsp//HAL/inc -I../nios_software_bsp/ -I../nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/lab6.o lab6.c
+lab6.c: In function 'main':
+lab6.c:34:20: warning: passing argument 1 of 'writeReadWord' makes pointer from integer without a cast [-Wint-conversion]
+      writeReadWord(*infWordPtr, 31, 32);
+                    ^
+lab6.c:21:6: note: expected 'uint32 * {aka long unsigned int *}' but argument is of type 'uint32 {aka long unsigned int}'
+ void writeReadWord(uint32 *startAddress, uint32 numBytes, uint32 writeData);
+      ^
+Info: Linking nios_software.elf
+nios2-elf-g++  -T'../nios_software_bsp//linker.x' -msys-crt0='../nios_software_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../nios_software_bsp/  -msmallc  -Wl,-Map=nios_software.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o nios_software.elf obj/default/lab6.o -lm -msys-lib=m
+nios2-elf-insert nios_software.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 103 --sidp 0x9020 --timestamp 1793037973 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab6/Quartus/part1" --jdi ../..//output_files/lab6.jdi --sopcinfo C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab6/Quartus/part1/software/nios_software_bsp/../../nios_system.sopcinfo
+Info: (nios_software.elf) 5400 Bytes program size (code + initialized data).
+Info:                     10 KBytes free for stack + heap.
+Info: Creating nios_software.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source nios_software.elf >nios_software.objdump
+[nios_software build complete]
+15:51:08 **** Incremental Build of configuration Nios II for project nios_software ****
+make all 
+Info: Building ../nios_software_bsp/
+C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_software_bsp/
+[BSP build complete]
+[nios_software build complete]

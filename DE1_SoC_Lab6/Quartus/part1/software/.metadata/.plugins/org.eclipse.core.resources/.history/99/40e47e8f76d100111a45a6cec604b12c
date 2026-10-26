@@ -1,0 +1,66 @@
+//includes
+#include "io.h"
+#include <stdio.h>
+#include <stdbool.h>
+#include "system.h"
+#include "alt_types.h"
+#include "sys/alt_irq.h"
+
+// create standard embedded type definitions
+typedef   signed char   sint8;              // signed 8 bit values
+typedef unsigned char   uint8;              // unsigned 8 bit values
+typedef   signed short  sint16;             // signed 16 bit values
+typedef unsigned short  uint16;             // unsigned 16 bit values
+typedef   signed long   sint32;             // signed 32 bit values
+typedef unsigned long   uint32;             // unsigned 32 bit values
+typedef         float   real32;             // 32 bit real values
+
+//functions
+void writeReadByte(uint8 *startAddress, uint8 numBytes, uint8 writeData);
+void writeReadHalfWord(void);
+void writeReadWord(uint32 *startAddress, uint32 numBytes, uint32 writeData);
+
+
+//vars
+uint8 *keyPtr = (uint8*)KEY_BASE;
+uint8 *ledPtr = (uint8*)LEDS_BASE;
+uint8 *infBytePtr = (uint8*)INFERRED_RAM_BASE;
+uint16 *infHalfPtr = (uint16*)INFERRED_RAM_BASE;
+uint32 *infWordPtr = (uint32*)INFERRED_RAM_BASE;
+
+//main function
+int main(void){
+	while(1){
+	    writeReadWord(*infWordPtr, 31, 32);
+
+	}
+}
+
+void writeReadByte(uint8 *startAddress, uint8 numBytes, uint8 writeData) {
+    uint8 readData = 0;
+    for(int i = 0; i < numBytes; i++){
+        *(startAddress + i) = writeData;
+    }
+    for(int i = 0; i < numBytes; i++){
+        readData = *(startAddress + i);
+        if(writeData != readData){
+            *ledPtr = 0xff;
+        }
+        *ledPtr = 0x00;
+    }
+}
+
+void writeReadWord(uint32 *startAddress, uint32 numBytes, uint32 writeData){
+    uint32 readData = 0;
+    for(int i = 0; i < numBytes; i++){
+        *(infWordPtr + i) = writeData;
+    }
+    for(int i = 0; i < numBytes; i++){
+        readData = *(startAddress + i);
+        *ledPtr = 0x00;
+        if(writeData != readData){
+            *ledPtr = 0xff;
+        }
+    }
+}
+
