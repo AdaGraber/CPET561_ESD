@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab7
-Tue Nov 03 14:39:47 2026
+Mon Nov 09 14:31:47 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -182,10 +182,9 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 174. Port Connectivity Checks: "nios_system:u0|nios_system_jtag_uart_0:jtag_uart_0|alt_jtag_atlantic:nios_system_jtag_uart_0_alt_jtag_atlantic"
 175. Port Connectivity Checks: "nios_system:u0|nios_system_jtag_uart_0:jtag_uart_0"
 176. Post-Synthesis Netlist Statistics for Top Partition
-177. Post-Synthesis Netlist Statistics for Partition sld_hub:auto_hub
-178. Elapsed Time Per Partition
-179. Analysis & Synthesis Messages
-180. Analysis & Synthesis Suppressed Messages
+177. Elapsed Time Per Partition
+178. Analysis & Synthesis Messages
+179. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -211,13 +210,13 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Nov 03 14:39:47 2026           ;
+; Analysis & Synthesis Status     ; Successful - Mon Nov 09 14:31:47 2026           ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                   ; lab7                                            ;
 ; Top-level Entity Name           ; lab7                                            ;
 ; Family                          ; Cyclone V                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 956                                             ;
+; Total registers                 ; 959                                             ;
 ; Total pins                      ; 11                                              ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 273,376                                         ;
@@ -434,7 +433,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 754            ;
+; Estimate of Logic utilization (ALMs needed) ; 755            ;
 ;                                             ;                ;
 ; Combinational ALUT usage for logic          ; 1155           ;
 ;     -- 7 input functions                    ; 19             ;
@@ -443,7 +442,7 @@ refer to the applicable agreement for further details.
 ;     -- 4 input functions                    ; 180            ;
 ;     -- <=3 input functions                  ; 447            ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 956            ;
+; Dedicated logic registers                   ; 959            ;
 ;                                             ;                ;
 ; I/O pins                                    ; 11             ;
 ; Total MLAB memory bits                      ; 0              ;
@@ -452,8 +451,8 @@ refer to the applicable agreement for further details.
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 961            ;
-; Total fan-out                               ; 10715          ;
+; Maximum fan-out                             ; 964            ;
+; Total fan-out                               ; 10721          ;
 ; Average fan-out                             ; 4.62           ;
 +---------------------------------------------+----------------+
 
@@ -463,7 +462,7 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                                                                                                          ; Entity Name                                         ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+--------------+
-; |lab7                                                                                                                                   ; 1155 (1)            ; 956 (3)                   ; 273376            ; 0          ; 11   ; 0            ; |lab7                                                                                                                                                                                                                                                                                                                                                                                                                                        ; lab7                                                ; work         ;
+; |lab7                                                                                                                                   ; 1155 (1)            ; 959 (6)                   ; 273376            ; 0          ; 11   ; 0            ; |lab7                                                                                                                                                                                                                                                                                                                                                                                                                                        ; lab7                                                ; work         ;
 ;    |nios_system:u0|                                                                                                                     ; 1038 (0)            ; 868 (0)                   ; 273376            ; 0          ; 0    ; 0            ; |lab7|nios_system:u0                                                                                                                                                                                                                                                                                                                                                                                                                         ; nios_system                                         ; nios_system  ;
 ;       |altera_reset_controller:rst_controller|                                                                                          ; 7 (6)               ; 16 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |lab7|nios_system:u0|altera_reset_controller:rst_controller                                                                                                                                                                                                                                                                                                                                                                                  ; altera_reset_controller                             ; nios_system  ;
 ;          |altera_reset_synchronizer:alt_rst_req_sync_uq1|                                                                               ; 1 (1)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |lab7|nios_system:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1                                                                                                                                                                                                                                                                                                                                   ; altera_reset_synchronizer                           ; nios_system  ;
@@ -1170,7 +1169,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 956   ;
+; Total registers                              ; 959   ;
 ; Number of registers using Synchronous Clear  ; 215   ;
 ; Number of registers using Synchronous Load   ; 163   ;
 ; Number of registers using Asynchronous Clear ; 621   ;
@@ -1263,15 +1262,6 @@ Encoding Type:  One-Hot
 ; 4:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |lab7|nios_system:u0|nios_system_nios2_gen2_0:nios2_gen2_0|nios_system_nios2_gen2_0_cpu:cpu|W_rf_wr_data[11]                                                                                                                                                                                                                                                                             ;
 ; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |lab7|nios_system:u0|nios_system_nios2_gen2_0:nios2_gen2_0|nios_system_nios2_gen2_0_cpu:cpu|D_dst_regnum[0]                                                                                                                                                                                                                                                                              ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |lab7|nios_system:u0|nios_system_mm_interconnect_0:mm_interconnect_0|nios_system_mm_interconnect_0_router:router|src_channel[1]                                                                                                                                                                                                                                                          ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |lab7|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irsr_reg[2]                                                       ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |lab7|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|shadow_irf_reg[2][0]                                              ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |lab7|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|hub_minor_ver_reg[0]                                              ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |lab7|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|hub_minor_ver_reg[3]                                              ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |lab7|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irf_reg[2][0]                                                     ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |lab7|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal[1]                                        ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |lab7|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|word_counter[3]                           ;
-; 34:1               ; 4 bits    ; 88 LEs        ; 64 LEs               ; 24 LEs                 ; Yes        ; |lab7|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|design_hash_reg[1]                                                ;
-; 28:1               ; 4 bits    ; 72 LEs        ; 52 LEs               ; 20 LEs                 ; Yes        ; |lab7|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|WORD_SR[0]                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -4602,7 +4592,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 871                         ;
+; arriav_ff             ; 874                         ;
 ;     CLR               ; 265                         ;
 ;     CLR SCLR          ; 66                          ;
 ;     CLR SCLR SLD      ; 11                          ;
@@ -4615,7 +4605,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SCLR SLD      ; 25                          ;
 ;     ENA SLD           ; 9                           ;
 ;     SLD               ; 30                          ;
-;     plain             ; 98                          ;
+;     plain             ; 101                         ;
 ; arriav_lcell_comb     ; 1039                        ;
 ;     arith             ; 107                         ;
 ;         0 data inputs ; 1                           ;
@@ -4641,44 +4631,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 
 
-+------------------------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Partition sld_hub:auto_hub ;
-+-----------------------+------------------------------------------+
-; Type                  ; Count                                    ;
-+-----------------------+------------------------------------------+
-; arriav_ff             ; 85                                       ;
-;     CLR               ; 6                                        ;
-;     ENA               ; 30                                       ;
-;     ENA CLR           ; 24                                       ;
-;     ENA CLR SLD       ; 2                                        ;
-;     SCLR              ; 7                                        ;
-;     plain             ; 16                                       ;
-; arriav_lcell_comb     ; 116                                      ;
-;     extend            ; 2                                        ;
-;         7 data inputs ; 2                                        ;
-;     normal            ; 114                                      ;
-;         0 data inputs ; 1                                        ;
-;         1 data inputs ; 4                                        ;
-;         2 data inputs ; 26                                       ;
-;         3 data inputs ; 18                                       ;
-;         4 data inputs ; 18                                       ;
-;         5 data inputs ; 22                                       ;
-;         6 data inputs ; 25                                       ;
-; boundary_port         ; 141                                      ;
-;                       ;                                          ;
-; Max LUT depth         ; 3.00                                     ;
-; Average LUT depth     ; 1.60                                     ;
-+-----------------------+------------------------------------------+
-
-
-+---------------------------------+
-; Elapsed Time Per Partition      ;
-+------------------+--------------+
-; Partition Name   ; Elapsed Time ;
-+------------------+--------------+
-; Top              ; 00:00:02     ;
-; sld_hub:auto_hub ; 00:00:00     ;
-+------------------+--------------+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -4687,7 +4646,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Tue Nov 03 14:39:19 2026
+    Info: Processing started: Mon Nov 09 14:31:20 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab7 -c lab7
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
@@ -4992,7 +4951,7 @@ Info (12128): Elaborating entity "altera_reset_controller" for hierarchy "nios_s
 Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "nios_system:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1" File: C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab7/nios_system/synthesis/submodules/altera_reset_controller.v Line: 208
 Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "nios_system:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1" File: C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab7/nios_system/synthesis/submodules/altera_reset_controller.v Line: 220
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2026.11.03.14:39:35 Progress: Loading sld2dead247/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2026.11.09.14:31:36 Progress: Loading sld2dead247/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -5072,7 +5031,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alts
 Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Info (17049): 77 registers lost all their fanouts during netlist optimizations.
-Info (286031): Timing-Driven Synthesis is running on partition "sld_hub:auto_hub"
 Warning (20013): Ignored 571 assignments for entity "DE1_SoC" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[0] -entity DE1_SoC was ignored
     Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[10] -entity DE1_SoC was ignored
@@ -5648,17 +5606,15 @@ Warning (20013): Ignored 571 assignments for entity "DE1_SoC" -- entity does not
 Info (144001): Generated suppressed messages file C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab7/output_files/lab7.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 9 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab7/lab7.vhd Line: 9
-Info (21057): Implemented 1748 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1751 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 9 output pins
-    Info (21061): Implemented 1556 logic cells
+    Info (21061): Implemented 1559 logic cells
     Info (21064): Implemented 176 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 576 warnings
-    Info: Peak virtual memory: 5020 megabytes
-    Info: Processing ended: Tue Nov 03 14:39:47 2026
-    Info: Elapsed time: 00:00:28
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 574 warnings
+    Info: Peak virtual memory: 5018 megabytes
+    Info: Processing ended: Mon Nov 09 14:31:47 2026
+    Info: Elapsed time: 00:00:27
     Info: Total CPU time (on all processors): 00:00:45
 
 

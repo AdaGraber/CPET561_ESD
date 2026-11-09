@@ -27,13 +27,47 @@ uint8 *ledPtr = (uint8*)LEDS_BASE;
 volatile uint8 *infBytePtr = (uint8*)INFERRED_RAM_BE_0_BASE;
 volatile uint16 *infHalfPtr = (uint16*)INFERRED_RAM_BE_0_BASE;
 volatile uint32 *infWordPtr = (uint32*)INFERRED_RAM_BE_0_BASE;
+uint8 keyPressed = 0;
+
+//interrupt functions
+void pushbutton_isr(void *context){
+    if((*(keyPtr + 12) & 0x02) == 0){
+        keyPressed = 1;
+    }
+    *(keyPtr + 12) = 0;
+}
 
 //main function
 int main(void){
+    alt_ic_isr_register(KEY_IRQ_INTERRUPT_CONTROLLER_ID,KEY_IRQ,pushbutton_isr,0,0);
+    *(keyPtr + 8) = 1;
+
 	while(1){
 		writeReadByte(7, 0x00);
+		printf("Byte RAM TEST COMPLETED\n");
+		while(keyPressed==0) {
+			*ledPtr = 0x01;
+		}
+		*ledPtr = 0x00;
+		keyPressed = 0;
+
+
 		writeReadHalfWord(15, 0x1234);
+		printf("Half Word RAM TEST COMPLETED\n");
+		while(keyPressed == 0) {
+			*ledPtr = 0x02;
+		}
+		*ledPtr = 0x00;
+		keyPressed = 0;
+
+
 	    writeReadWord(31, 0xABCDEF90);
+		printf("Word RAM TEST COMPLETED\n");
+		while(keyPressed == 0) {
+			*ledPtr = 0x04;
+		}
+		*ledPtr = 0x00;
+		keyPressed = 0;
 
 	}
 }

@@ -1,0 +1,110 @@
+//includes
+#include "io.h"
+#include <stdio.h>
+#include <stdbool.h>
+#include "system.h"
+#include "alt_types.h"
+#include "sys/alt_irq.h"
+
+// create standard embedded type definitions
+typedef   signed char   sint8;              // signed 8 bit values
+typedef unsigned char   uint8;              // unsigned 8 bit values
+typedef   signed short  sint16;             // signed 16 bit values
+typedef unsigned short  uint16;             // unsigned 16 bit values
+typedef   signed long   sint32;             // signed 32 bit values
+typedef unsigned long   uint32;             // unsigned 32 bit values
+typedef         float   real32;             // 32 bit real values
+
+//functions
+void writeReadByte(uint8 numBytes, uint8 writeData);
+void writeReadHalfWord(uint16 numBytes, uint16 writeData);
+void writeReadWord(uint32 numBytes, uint32 writeData);
+
+
+//vars
+uint8 *keyPtr = (uint8*)KEY_BASE;
+uint8 *ledPtr = (uint8*)LEDS_BASE;
+volatile uint8 *infBytePtr = (uint8*)INFERRED_RAM_BE_0_BASE;
+volatile uint16 *infHalfPtr = (uint16*)INFERRED_RAM_BE_0_BASE;
+volatile uint32 *infWordPtr = (uint32*)INFERRED_RAM_BE_0_BASE;
+uint8 keyPressed = 0;
+
+//interrupt functions
+void pushbutton_isr(void *context){
+    if((*(keyPtr + 12) & 0x01) == 0){
+        keyPressed = 1;
+    }
+    *(keyPtr + 12) = 0;
+}
+
+//main function
+int main(void){
+    alt_ic_isr_register(KEY_IRQ_INTERRUPT_CONTROLLER_ID,KEY_IRQ,pushbutton_isr,0,0);
+    *(keyPtr + 8) = 1;
+
+	while(1){
+		writeReadByte(7, 0x00);
+		printf("Byte RAM TEST COMPLETED");
+		while(keyPressed == 0) {
+			*ledPtr = 0x01;
+		}
+		*ledPtr = 0x00;
+		writeReadHalfWord(15, 0x1234);
+		while(keyPressed == 0) {
+			*ledPtr = 0x02;
+		}
+		*ledPtr = 0x00;
+
+	    writeReadWord(31, 0xABCDEF90);
+		while(keyPressed == 0) {
+			*ledPtr = 0x04;
+		}
+		*ledPtr = 0x00;
+	}
+}
+
+void writeReadByte(uint8 numBytes, uint8 writeData) {
+    uint8 readData = 0;
+    for(int i = 0; i < numBytes; i++){
+        *(infBytePtr + i) = writeData;
+    }
+    for(int i = 0; i < numBytes; i++){
+        readData = *(infBytePtr + i);
+        if(writeData != readData){
+            *ledPtr = 0xff;
+            printf("ERROR at ADDRESS OFFSET: %d. Expected Value: %d. Received value: %d. \n", i, writeData, readData);
+        }
+        *ledPtr = 0x00;
+    }
+}
+
+void writeReadHalfWord(uint16 numBytes, uint16 writeData) {
+    uint16 readData = 0;
+    for(int i = 0; i < numBytes; i++){
+        *(infHalfPtr + i) = writeData;
+    }
+    for(int i = 0; i < numBytes; i++){
+        readData = *(infHalfPtr + i);
+        if(writeData != readData){
+            *ledPtr = 0xff;
+            printf("ERROR at ADDRESS OFFSET: %d. Expected Value: %d. Received value: %d", i, writeData, readData);
+        }
+        *ledPtr = 0x00;
+    }
+}
+
+void writeReadWord(uint32 numBytes, uint32 writeData){
+    uint32 readData = 0;
+    for(int i = 0; i < numBytes; i++){
+        *(infWordPtr + i) = writeData;
+    }
+    for(int i = 0; i < numBytes; i++){
+        readData = *(infWordPtr + i);
+        *ledPtr = 0x00;
+        if(writeData != readData){
+            *ledPtr = 0xff;
+            printf("ERROR at ADDRESS OFFSET: %d. Expected Value: %d. Received value: %d", i, writeData, readData);
+        }
+    }
+}
+

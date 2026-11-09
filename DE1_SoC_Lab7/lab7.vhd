@@ -45,7 +45,7 @@ begin
     port map
     (
       clk_clk       => CLOCK_50, --   clk.clk
-      key_export    => key(0), --   key.export
+      key_export    => key_d3(1), --   key.export
       leds_export   => ledr, --  leds.export
       reset_reset_n => reset_n -- reset.reset_n
     );
