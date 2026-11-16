@@ -14,13 +14,14 @@ end low_pass_filter;
 
 architecture rtl of low_pass_filter is
   --mult component to be instantiated
-  component mult_filter is
-    port (
-      dataa  : in std_logic_vector (15 downto 0);
-      datab  : in std_logic_vector (15 downto 0);
-      result : out std_logic_vector (31 downto 0)
-    );
-  end component;
+component mult_filter IS
+	PORT
+	(
+		dataa		: IN STD_LOGIC_VECTOR (15 DOWNTO 0);
+		datab		: IN STD_LOGIC_VECTOR (15 DOWNTO 0);
+		result		: OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
+	);
+END component;
 
   --z register component instantiations
   component z_reg is
@@ -37,12 +38,13 @@ architecture rtl of low_pass_filter is
   X"107F", X"0E11", X"0AAC", X"071A", X"0408", X"01E1", X"00BA", X"0051");
 
   type signal_type is array (16 downto 0) of std_logic_vector (15 downto 0);
-  signal data : signal_type;
+  signal data : signal_type := (others => (others => '0'));
 
-  type result_type is array (16 downto 0) of std_logic_vector (15 downto 0);
-  signal result : result_type;
+  type result_type is array (16 downto 0) of std_logic_vector (31 downto 0);
+  signal result : result_type :=  (others => (others => '0'));
 
 begin
+  data(0) <= data_in;
   --generate THE REGISTERS
   gen_z_reg : for i in 0 to 15 generate
   begin
@@ -64,7 +66,7 @@ begin
     (
       dataa  => data(i),
       datab  => S(i),
-      result(30 downto 15) => result(i)
+      result => result(i)
     );
   end generate;
 

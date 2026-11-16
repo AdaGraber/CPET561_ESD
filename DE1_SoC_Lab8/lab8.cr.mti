@@ -1,0 +1,42 @@
+C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab8/low_pass_filter.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none {C:\Users\ilg9251\Desktop\CPET561_ESD\DE1_SoC_Lab8\low_pass_filter.vhd}
+Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Compiling entity low_pass_filter
+-- Compiling architecture rtl of low_pass_filter
+
+} {} {}} C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab8/filter_tb.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none {C:\Users\ilg9251\Desktop\CPET561_ESD\DE1_SoC_Lab8\filter_tb.vhd}
+Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Compiling entity filter_tb
+-- Compiling architecture rtl of filter_tb
+
+} {} {}} C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab8/z_reg.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab8/z_reg.vhd
+Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Compiling entity z_reg
+-- Compiling architecture rtl of z_reg
+
+} {} {}} C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab8/mult_filter.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none C:/Users/ilg9251/Desktop/CPET561_ESD/DE1_SoC_Lab8/mult_filter.vhd
+Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity mult_filter
+-- Compiling architecture SYN of mult_filter
+
+} {} {}}
