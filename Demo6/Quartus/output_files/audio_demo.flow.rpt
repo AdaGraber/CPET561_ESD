@@ -1,6 +1,6 @@
 Flow report for audio_demo
-Fri Oct 30 20:50:23 2026
-Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Mon Nov 23 15:10:51 2026
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
 ---------------------
@@ -37,29 +37,29 @@ refer to the applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------+
-; Flow Summary                                                                  ;
-+---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Fri Oct 30 20:50:14 2026       ;
-; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Revision Name                   ; audio_demo                                  ;
-; Top-level Entity Name           ; audio_demo                                  ;
-; Family                          ; Cyclone V                                   ;
-; Device                          ; 5CSEMA5F31C6                                ;
-; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 1,304 / 32,070 ( 4 % )                      ;
-; Total registers                 ; 1871                                        ;
-; Total pins                      ; 104 / 457 ( 23 % )                          ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 543,872 / 4,065,280 ( 13 % )                ;
-; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 1 / 6 ( 17 % )                              ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
-+---------------------------------+---------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Flow Summary                                                                      ;
++---------------------------------+-------------------------------------------------+
+; Flow Status                     ; Successful - Mon Nov 23 15:10:37 2026           ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
+; Revision Name                   ; audio_demo                                      ;
+; Top-level Entity Name           ; audio_demo                                      ;
+; Family                          ; Cyclone V                                       ;
+; Device                          ; 5CSEMA5F31C6                                    ;
+; Timing Models                   ; Final                                           ;
+; Logic utilization (in ALMs)     ; 1,304 / 32,070 ( 4 % )                          ;
+; Total registers                 ; 1871                                            ;
+; Total pins                      ; 104 / 457 ( 23 % )                              ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 543,872 / 4,065,280 ( 13 % )                    ;
+; Total DSP Blocks                ; 0 / 87 ( 0 % )                                  ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 1 / 6 ( 17 % )                                  ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                                   ;
++---------------------------------+-------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/30/2026 20:48:32 ;
+; Start date & time ; 11/23/2026 15:08:10 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; audio_demo          ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+---------------------------------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                                         ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 53146181501181.179340771202256                                ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 194042950431224.179546448911128                               ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                            ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                             ; --            ; --          ; --         ;
 ; MISC_FILE                           ; nios_system/synthesis/../nios_system.cmp                      ; --            ; --          ; --         ;
@@ -102,11 +102,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:25     ; 1.0                     ; 5050 MB             ; 00:00:34                           ;
-; Fitter               ; 00:01:06     ; 1.1                     ; 7482 MB             ; 00:03:17                           ;
-; Assembler            ; 00:00:06     ; 1.0                     ; 4881 MB             ; 00:00:05                           ;
-; Timing Analyzer      ; 00:00:08     ; 1.9                     ; 5420 MB             ; 00:00:13                           ;
-; Total                ; 00:01:45     ; --                      ; --                  ; 00:04:09                           ;
+; Analysis & Synthesis ; 00:00:33     ; 1.0                     ; 5067 MB             ; 00:00:53                           ;
+; Fitter               ; 00:01:42     ; 1.1                     ; 7630 MB             ; 00:07:31                           ;
+; Assembler            ; 00:00:07     ; 1.0                     ; 4896 MB             ; 00:00:07                           ;
+; Timing Analyzer      ; 00:00:13     ; 1.7                     ; 5464 MB             ; 00:00:19                           ;
+; Total                ; 00:02:35     ; --                      ; --                  ; 00:08:50                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -115,10 +115,10 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-BU5KUEM  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-BU5KUEM  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-BU5KUEM  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-BU5KUEM  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; gol-1360-01      ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; gol-1360-01      ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; gol-1360-01      ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; gol-1360-01      ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

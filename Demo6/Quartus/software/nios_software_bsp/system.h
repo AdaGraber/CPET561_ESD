@@ -2,9 +2,9 @@
  * system.h - SOPC Builder system and BSP software package information
  *
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'nios_system'
- * SOPC Builder design path: ../../nios_system.sopcinfo
+ * SOPC Builder design path: ../../../Quartus - Copy/nios_system.sopcinfo
  *
- * Generated: Fri Oct 30 20:54:32 EDT 2026
+ * Generated: Mon Nov 23 15:38:35 EST 2026
  */
 
 /*
@@ -142,6 +142,7 @@
 #define __ALTERA_NIOS2_GEN2
 #define __ALTERA_UP_AVALON_AUDIO
 #define __ALTERA_UP_AVALON_AUDIO_AND_VIDEO_CONFIG
+#define __AUDIO_FILTER
 
 
 /*
@@ -217,6 +218,20 @@
 
 
 /*
+ * audio_filter_0 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_audio_filter_0 audio_filter
+#define AUDIO_FILTER_0_BASE 0x4021070
+#define AUDIO_FILTER_0_IRQ -1
+#define AUDIO_FILTER_0_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define AUDIO_FILTER_0_NAME "/dev/audio_filter_0"
+#define AUDIO_FILTER_0_SPAN 4
+#define AUDIO_FILTER_0_TYPE "audio_filter"
+
+
+/*
  * hal configuration
  *
  */
@@ -234,7 +249,7 @@
 
 #define ALT_MODULE_CLASS_jtag_uart_0 altera_avalon_jtag_uart
 #define JTAG_UART_0_BASE 0x4021068
-#define JTAG_UART_0_IRQ 1
+#define JTAG_UART_0_IRQ 2
 #define JTAG_UART_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_0_NAME "/dev/jtag_uart_0"
 #define JTAG_UART_0_READ_DEPTH 64
@@ -353,14 +368,14 @@
 #define PIO_0_DATA_WIDTH 8
 #define PIO_0_DO_TEST_BENCH_WIRING 0
 #define PIO_0_DRIVEN_SIM_VALUE 0
-#define PIO_0_EDGE_TYPE "RISING"
+#define PIO_0_EDGE_TYPE "ANY"
 #define PIO_0_FREQ 50000000
 #define PIO_0_HAS_IN 1
 #define PIO_0_HAS_OUT 0
 #define PIO_0_HAS_TRI 0
-#define PIO_0_IRQ -1
-#define PIO_0_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define PIO_0_IRQ_TYPE "NONE"
+#define PIO_0_IRQ 1
+#define PIO_0_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define PIO_0_IRQ_TYPE "EDGE"
 #define PIO_0_NAME "/dev/pio_0"
 #define PIO_0_RESET_VALUE 0
 #define PIO_0_SPAN 16
@@ -379,7 +394,7 @@
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1793407414
+#define SYSID_TIMESTAMP 1795465782
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 

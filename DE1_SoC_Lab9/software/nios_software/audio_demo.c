@@ -137,7 +137,7 @@ void read_file(void)
 	uint32 i = 0;
 
 	//start reading
-	  fp = fopen("audioTones.wav", "r");
+	  fp = fopen("/mnt/host/audioTones.wav", "r");
 
 	  if(fp == NULL)
 	  {

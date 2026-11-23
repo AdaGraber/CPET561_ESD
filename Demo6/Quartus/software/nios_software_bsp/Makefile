@@ -100,8 +100,8 @@ ACDS_VERSION := 18.1
 # used to generate this makefile. 
 # BUILD_NUMBER: 625
 
-SETTINGS_FILE := settings.bsp
-SOPC_FILE := ../../nios_system.sopcinfo
+SETTINGS_FILE := ../../../Quartus - Copy/software/nios_software_bsp/settings.bsp
+SOPC_FILE := ../../../Quartus - Copy/nios_system.sopcinfo
 
 #-------------------------------------------------------------------------------
 #                             TOOL & COMMAND DEFINITIONS

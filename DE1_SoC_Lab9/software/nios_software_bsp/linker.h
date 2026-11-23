@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'nios_system'
  * SOPC Builder design path: ../../nios_system.sopcinfo
  *
- * Generated: Tue Nov 17 15:15:44 EST 2026
+ * Generated: Mon Nov 23 15:52:06 EST 2026
  */
 
 /*
@@ -80,8 +80,8 @@
 
 #define ALT_EXCEPTIONS_DEVICE ONCHIP_MEMORY2_1
 #define ALT_RESET_DEVICE ONCHIP_MEMORY2_1
-#define ALT_RODATA_DEVICE NEW_SDRAM_CONTROLLER_0
-#define ALT_RWDATA_DEVICE NEW_SDRAM_CONTROLLER_0
+#define ALT_RODATA_DEVICE ONCHIP_MEMORY2_1
+#define ALT_RWDATA_DEVICE ONCHIP_MEMORY2_1
 #define ALT_TEXT_DEVICE ONCHIP_MEMORY2_1
 
 
