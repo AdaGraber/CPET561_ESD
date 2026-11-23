@@ -123,7 +123,7 @@ begin
 	--sync switches
   synchUserIn_proc : process (CLOCK2_50) begin
     if (rising_edge(CLOCK2_50)) then
-      if (reset_n = '0') then
+      if (reset_n = '1') then
         sw_d1 <= x"00";
         sw_d2 <= x"00";
       else

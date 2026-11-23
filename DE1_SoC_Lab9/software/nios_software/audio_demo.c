@@ -26,7 +26,7 @@ typedef unsigned long   uint32;             // unsigned 32 bit values
 typedef         float   real32;             // 32 bit real values
 
 // Global variables
-#define MAX_SAMPLES 				 0x10000  //max sample data (16 bits each) for SDRAM
+#define MAX_SAMPLES 				 0x20000  //max sample data (16 bits each) for SDRAM
 
 uint32 ECHO_CNT = 0;                      // index into buffer
 uint32 SAMPLE_CNT = 0;                    //keep track of which sample is being read from SDRAM
@@ -40,7 +40,7 @@ uint8 sw1On = 0;
 
 //set up pointers to peripherals
 uint16* SdramPtr    = (uint16*)NEW_SDRAM_CONTROLLER_0_BASE;
-uint32* AudioPtr    = (uint32*)AUDIO_0_BASE;
+uint16* AudioPtr    = (uint16*)AUDIO_0_BASE;
 uint32* TimerPtr    = (uint32*)TIMER_0_BASE;
 uint32* PinPtr      = (uint32*)PIN_BASE;
 uint8* swPtr = (uint8*)SW_BASE;
@@ -53,8 +53,7 @@ uint8* swPtr = (uint8*)SW_BASE;
   // audio core
 void timer_isr(void *context)
 {
-	  uint16 right_sample, left_sample;
-
+	    uint16 right_sample, left_sample;
 		//clear timer interrupt
         *TimerPtr = 0;
         if (TOGGLE == 0)
@@ -63,10 +62,24 @@ void timer_isr(void *context)
         }
         *PinPtr = TOGGLE;
 
+		if(sw1On == 0 && sw0On == 1){ //low pass filter enable
+			*(AudioPtr + 1) = 0;
+		}
+		else if(sw1On == 1 && sw0On == 0){ //high pass filter enable
+			*(AudioPtr + 1) = 1;
+		}
+
 
 	    if (SAMPLE_CNT < MAX_SAMPLES)
 	    {
-	    	left_sample = SdramPtr[SAMPLE_CNT++];  //read left side sample first
+			
+			if((sw1On || sw0On) == 1){
+				*AudioPtr = SdramPtr[SAMPLE_CNT++];
+				left_sample = *AudioPtr;
+			}
+			else{
+	    		left_sample = SdramPtr[SAMPLE_CNT++];  //read left side sample first
+			}
 
 	    	if (CHANNELS == 2)                       //only read right sample if stereo mode
 	    	{
@@ -96,14 +109,14 @@ void sw_isr(void *context){
 	if((*(swPtr+12) & 0x01) == 1){//checks if sw0 is high, if it is set var to 1, if not to 0
 		sw0On = 1;
 	}
-	else{
+	else if((*(swPtr+12) & 0x01) == 0) {
 		sw0On = 0;
 	}
 
 	if((*(swPtr+12) & 0x02) == 1){ //checks if sw1 is high, if it is set var to 1, if not to 0
 		sw1On = 1;
 	}
-	else{
+	else if ((*(swPtr+12) & 0x02) == 0) {
 		sw1On = 0;
 	}
 
@@ -178,6 +191,9 @@ int main(void)
 	alt_ic_isr_register(TIMER_0_IRQ_INTERRUPT_CONTROLLER_ID,TIMER_0_IRQ,timer_isr,0,0);
    //initialize timer interrupt 48Khz
 	TimerPtr[4] = 3;
+
+    alt_ic_isr_register(SW_IRQ_INTERRUPT_CONTROLLER_ID,SW_IRQ,sw_isr,0,0);
+	*(swPtr+8) = 3;
 
 
  while (1)
